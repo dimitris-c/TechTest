@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.appController = appController
         
         appController.start()
+        
         return true
     }
     

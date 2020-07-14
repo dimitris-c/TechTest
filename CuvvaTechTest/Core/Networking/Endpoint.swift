@@ -39,7 +39,7 @@ final class Endpoint<Response: Decodable> {
                             path: Path,
                             parameters: Parameters? = nil,
                             queries: Codable? = nil,
-                            cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalCacheData) {
+                            cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy) {
         self.init(method: method,
                   path: path,
                   parameters: parameters,

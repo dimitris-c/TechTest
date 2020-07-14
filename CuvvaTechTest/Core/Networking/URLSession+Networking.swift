@@ -8,7 +8,7 @@ import Foundation
 enum NetworkError: Error, Equatable {
     case unknown
     case nonHTTPResponse(response: URLResponse)
-    case decodingFailed
+    case decodingFailed(message: String)
     case httpRequestFailed(response: HTTPURLResponse, data: Data?)
 }
 

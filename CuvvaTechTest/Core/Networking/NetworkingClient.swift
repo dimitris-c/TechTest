@@ -24,10 +24,11 @@ final class NetworkingClient: Networking {
         self.session.response(request: request) { result in
             switch result {
             case .success(let value):
-                if let result = try? endpoint.decode(value.data) {
+                do {
+                    let result = try endpoint.decode(value.data)
                     completion(.success((value.response, result)))
-                } else {
-                    completion(.failure(NetworkError.decodingFailed))
+                } catch {
+                    completion(.failure(NetworkError.decodingFailed(message: error.localizedDescription)))
                 }
                 break
             case .failure(let error):
