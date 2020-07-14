@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct PolicyCancelled: Decodable, Equatable {
+struct PolicyCancelled: Codable, Equatable {
     let policyId: String
     let type: String
     let newEndDate: Date?

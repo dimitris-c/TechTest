@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Policy: Decodable, Equatable {
+struct Policy: Codable, Equatable {
     let userId: String
     let userRevision: String
     let policyId: String
@@ -18,12 +18,12 @@ struct Policy: Decodable, Equatable {
     let documents: Decuments
 }
 
-struct Decuments: Decodable, Equatable {
+struct Decuments: Codable, Equatable {
     let certificateUrl: String
     let termsUrl: String
 }
 
-struct Vehicle: Decodable, Equatable {
+struct Vehicle: Codable, Equatable {
     let vrm: String
     let prettyVrm: String
     let make: String

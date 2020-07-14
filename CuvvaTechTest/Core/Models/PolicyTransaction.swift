@@ -6,12 +6,12 @@
 import Foundation
 
 
-struct PolicyTransaction: Decodable, Equatable {
+struct PolicyTransaction: Codable, Equatable {
     let policyId: String
     let pricing: Receipt
 }
 
-struct Receipt: Decodable, Equatable {
+struct Receipt: Codable, Equatable {
     let underwriterPremium: Int
     let commission: Int
     let totalPremium: Int

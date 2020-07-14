@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct PolicyWrapper: Decodable, Equatable {
+struct PolicyWrapper: Codable, Equatable {
     let type: String
     let timestamp: Date
     let uniqueKey: String
@@ -24,5 +24,13 @@ struct PolicyWrapper: Decodable, Equatable {
         self.timestamp = try container.decode(Date.self, forKey: .timestamp)
         self.uniqueKey = try container.decode(String.self, forKey: .uniqueKey)
         self.payload = try PolicyType(from: decoder)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(type, forKey: .type)
+        try container.encode(timestamp, forKey: .timestamp)
+        try container.encode(uniqueKey, forKey: .uniqueKey)
+        try container.encode(payload, forKey: .payload)
     }
 }

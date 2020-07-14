@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct PolicyData: Decodable, Equatable {
+struct PolicyData: Codable, Equatable {
     let data: [PolicyWrapper]
     
     init(from decoder: Decoder) throws {
@@ -16,6 +16,13 @@ struct PolicyData: Decodable, Equatable {
             data.append(value)
         }
         self.data = data
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.unkeyedContainer()
+        for value in data {
+            try container.encode(value)
+        }
     }
     
     func policies() -> [Policy] {

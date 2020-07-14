@@ -12,20 +12,24 @@ protocol PolicyAPI {
 final class PolicyAPIClient: PolicyAPI {
     
     private let networking: Networking
+    private let persistence: PolicyPersistence
     private let baseUrl: URL
     
-    init(networking: Networking, baseUrl: URL) {
+    init(networking: Networking, baseUrl: URL, persistence: PolicyPersistence) {
         self.networking = networking
         self.baseUrl = baseUrl
+        self.persistence = persistence
     }
     
     func getData(on queue: DispatchQueue = .main, completion: @escaping (Result<PolicyData, NetworkError>) -> Void) {
         let endpoint = Endpoint<PolicyData>(method: .get, path: "", parameters: nil, decode: policyDataDecoding, cachePolicy: .useProtocolCachePolicy)
         self.networking.request(endpoint, baseURL: baseUrl) { result in
-            queue.async {
+            queue.async { [weak self] in
+                guard let self = self else { return }
                 switch result {
-                    case .success(let respose):
-                        completion(.success(respose.result))
+                    case .success(let value):
+                        self.persistence.save(data: value.result)
+                        completion(.success(value.result))
                     case .failure(let error):
                         if let error = error as? NetworkError {
                             completion(.failure(error))
@@ -38,10 +42,21 @@ final class PolicyAPIClient: PolicyAPI {
     }
     
     private func policyDataDecoding(_ data: Data) throws -> PolicyData {
-        let decode = JSONDecoder()
-        decode.dateDecodingStrategy = .formatted(.iso8601)
-        decode.keyDecodingStrategy = .convertFromSnakeCase
-        return try decode.decode(PolicyData.self, from: data)
+        return try policyDecoder.decode(PolicyData.self, from: data)
     }
     
 }
+
+var policyDecoder: JSONDecoder = {
+    let decode = JSONDecoder()
+    decode.dateDecodingStrategy = .formatted(.iso8601)
+    decode.keyDecodingStrategy = .convertFromSnakeCase
+    return decode
+}()
+
+var policyEncoder: JSONEncoder = {
+    let encoder = JSONEncoder()
+    encoder.dateEncodingStrategy = .formatted(.iso8601)
+    encoder.keyEncodingStrategy = .convertToSnakeCase
+    return encoder
+}()

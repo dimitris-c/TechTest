@@ -24,6 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         appController.start()
         
+        let policyPersistence = PolicyPersistenceService(persistence: services.persistence)
+        let client = PolicyAPIClient(networking: services.networkingClient,
+                                     baseUrl: PolicyAPIConfig.staging.baseUrl, persistence: policyPersistence)
+        
+        client.getData { response in
+//            print(response)
+            print(policyPersistence.getData())
+        }
+        
         return true
     }
     

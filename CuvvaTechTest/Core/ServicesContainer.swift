@@ -13,4 +13,6 @@ final class ServicesContainer: Services {
     
     lazy var networkingClient: Networking = NetworkingClient()
     
+    lazy var persistence: Persistence = PersistenceService()
+    
 }

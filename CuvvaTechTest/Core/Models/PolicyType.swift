@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum PolicyType: Decodable, Equatable {
+enum PolicyType: Codable, Equatable {
     case created(Policy)
     case transaction(PolicyTransaction)
     case cancelled(PolicyCancelled)
@@ -34,6 +34,20 @@ enum PolicyType: Decodable, Equatable {
         }
         else {
             self = .unknown
+        }
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+            case .created(let policy):
+                try container.encode(policy)
+            case .transaction(let transaction):
+                try container.encode(transaction)
+            case .cancelled(let cancelled):
+                try container.encode(cancelled)
+            default:
+            break
         }
     }
 }
