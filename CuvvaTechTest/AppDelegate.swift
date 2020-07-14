@@ -12,14 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var appController: AppController?
+    let services = ServicesContainer()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
+        let appController = AppController(window: window, services: services)
         self.window = window
+        self.appController = appController
         
-        self.window?.rootViewController = UIViewController()
-        
+        appController.start()
         return true
     }
     

@@ -12,6 +12,8 @@
 		B5C58E2424BD9AE100566FB4 /* URLSession+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E2324BD9AE100566FB4 /* URLSession+Networking.swift */; };
 		B5C58E2724BD9C2000566FB4 /* NetworkingClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E2624BD9C2000566FB4 /* NetworkingClientsTests.swift */; };
 		B5C58E2A24BD9F5900566FB4 /* DesignStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E2924BD9F5900566FB4 /* DesignStyling.swift */; };
+		B5C58E2D24BDA42C00566FB4 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E2C24BDA42C00566FB4 /* AppController.swift */; };
+		B5C58E2F24BDA56A00566FB4 /* ServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E2E24BDA56A00566FB4 /* ServicesContainer.swift */; };
 		B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2617C24BC8D5900202207 /* AppDelegate.swift */; };
 		B5F2618624BC8D5A00202207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618524BC8D5A00202207 /* Assets.xcassets */; };
 		B5F2618924BC8D5A00202207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618724BC8D5A00202207 /* LaunchScreen.storyboard */; };
@@ -33,6 +35,8 @@
 		B5C58E2324BD9AE100566FB4 /* URLSession+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Networking.swift"; sourceTree = "<group>"; };
 		B5C58E2624BD9C2000566FB4 /* NetworkingClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClientsTests.swift; sourceTree = "<group>"; };
 		B5C58E2924BD9F5900566FB4 /* DesignStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStyling.swift; sourceTree = "<group>"; };
+		B5C58E2C24BDA42C00566FB4 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		B5C58E2E24BDA56A00566FB4 /* ServicesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesContainer.swift; sourceTree = "<group>"; };
 		B5F2617924BC8D5900202207 /* CuvvaTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuvvaTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F2617C24BC8D5900202207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F2618524BC8D5A00202207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,10 +85,18 @@
 		B5C58E2824BD9F4900566FB4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B5C58E2E24BDA56A00566FB4 /* ServicesContainer.swift */,
 				B50061A724BC9A9F009264DF /* Networking */,
 				B5C58E2924BD9F5900566FB4 /* DesignStyling.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		B5C58E2B24BDA30A00566FB4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		B5F2617024BC8D5800202207 = {
@@ -109,7 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				B5F2617C24BC8D5900202207 /* AppDelegate.swift */,
+				B5C58E2C24BDA42C00566FB4 /* AppController.swift */,
 				B5C58E2824BD9F4900566FB4 /* Core */,
+				B5C58E2B24BDA30A00566FB4 /* Modules */,
 				B5F2618524BC8D5A00202207 /* Assets.xcassets */,
 				B5F2618724BC8D5A00202207 /* LaunchScreen.storyboard */,
 				B5F2618A24BC8D5A00202207 /* Info.plist */,
@@ -227,11 +241,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C58E2F24BDA56A00566FB4 /* ServicesContainer.swift in Sources */,
 				B5C58E2A24BD9F5900566FB4 /* DesignStyling.swift in Sources */,
 				B5C58E2424BD9AE100566FB4 /* URLSession+Networking.swift in Sources */,
 				B5C58E2224BD9A5300566FB4 /* NetworkingClient.swift in Sources */,
 				B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */,
 				B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */,
+				B5C58E2D24BDA42C00566FB4 /* AppController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
