@@ -21,6 +21,8 @@
 		B5C58E3B24BDCCE000566FB4 /* PolicyCancelled.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3A24BDCCE000566FB4 /* PolicyCancelled.swift */; };
 		B5C58E3D24BDCCFE00566FB4 /* PolicyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3C24BDCCFE00566FB4 /* PolicyType.swift */; };
 		B5C58E3F24BDCDF500566FB4 /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3E24BDCDF500566FB4 /* DateFormatter+Utils.swift */; };
+		B5C58E4524BDD41D00566FB4 /* PolicyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E4424BDD41D00566FB4 /* PolicyAPIClient.swift */; };
+		B5C58E4724BDD4C100566FB4 /* PolicyAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E4624BDD4C100566FB4 /* PolicyAPIConfig.swift */; };
 		B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2617C24BC8D5900202207 /* AppDelegate.swift */; };
 		B5F2618624BC8D5A00202207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618524BC8D5A00202207 /* Assets.xcassets */; };
 		B5F2618924BC8D5A00202207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618724BC8D5A00202207 /* LaunchScreen.storyboard */; };
@@ -51,6 +53,8 @@
 		B5C58E3A24BDCCE000566FB4 /* PolicyCancelled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyCancelled.swift; sourceTree = "<group>"; };
 		B5C58E3C24BDCCFE00566FB4 /* PolicyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyType.swift; sourceTree = "<group>"; };
 		B5C58E3E24BDCDF500566FB4 /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
+		B5C58E4424BDD41D00566FB4 /* PolicyAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAPIClient.swift; sourceTree = "<group>"; };
+		B5C58E4624BDD4C100566FB4 /* PolicyAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAPIConfig.swift; sourceTree = "<group>"; };
 		B5F2617924BC8D5900202207 /* CuvvaTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuvvaTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F2617C24BC8D5900202207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F2618524BC8D5A00202207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		B5C58E2B24BDA30A00566FB4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B5C58E4324BDD40B00566FB4 /* Services */,
 				B5C58E3024BDA7AC00566FB4 /* Main */,
 			);
 			path = Modules;
@@ -142,6 +147,15 @@
 				B5C58E3E24BDCDF500566FB4 /* DateFormatter+Utils.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5C58E4324BDD40B00566FB4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5C58E4424BDD41D00566FB4 /* PolicyAPIClient.swift */,
+				B5C58E4624BDD4C100566FB4 /* PolicyAPIConfig.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B5F2617024BC8D5800202207 = {
@@ -294,9 +308,11 @@
 				B5C58E2224BD9A5300566FB4 /* NetworkingClient.swift in Sources */,
 				B5C58E3D24BDCCFE00566FB4 /* PolicyType.swift in Sources */,
 				B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */,
+				B5C58E4524BDD41D00566FB4 /* PolicyAPIClient.swift in Sources */,
 				B5C58E3F24BDCDF500566FB4 /* DateFormatter+Utils.swift in Sources */,
 				B5C58E3B24BDCCE000566FB4 /* PolicyCancelled.swift in Sources */,
 				B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */,
+				B5C58E4724BDD4C100566FB4 /* PolicyAPIConfig.swift in Sources */,
 				B5C58E2D24BDA42C00566FB4 /* AppController.swift in Sources */,
 				B5C58E3524BDCC7700566FB4 /* PolicyData.swift in Sources */,
 				B5C58E3324BDA8BF00566FB4 /* PolicyWrapper.swift in Sources */,

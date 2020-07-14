@@ -9,7 +9,7 @@ enum NetworkError: Error, Equatable {
     case unknown
     case nonHTTPResponse(response: URLResponse)
     case decodingFailed(message: String)
-    case httpRequestFailed(response: HTTPURLResponse, data: Data?)
+    case error(message: String)
 }
 
 protocol NetworkingSession {
