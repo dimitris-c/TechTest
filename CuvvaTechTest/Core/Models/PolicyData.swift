@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct PolicyData: Decodable {
+struct PolicyData: Decodable, Equatable {
     let data: [PolicyWrapper]
     
     init(from decoder: Decoder) throws {

@@ -5,11 +5,24 @@
 
 import Foundation
 
-enum NetworkError: Error, Equatable {
+enum NetworkError: LocalizedError, Equatable {
     case unknown
     case nonHTTPResponse(response: URLResponse)
     case decodingFailed(message: String)
     case error(message: String)
+    
+    var errorDescription: String? {
+        switch self {
+            case .unknown:
+                return "unknown error"
+            case .nonHTTPResponse:
+                return "non http response received"
+            case .decodingFailed(let message),
+                 .error(let message):
+                return message
+            
+        }
+    }
 }
 
 protocol NetworkingSession {

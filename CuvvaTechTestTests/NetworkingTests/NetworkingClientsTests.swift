@@ -42,7 +42,7 @@ class NetworkingClientTests: XCTestCase {
             case .success: XCTFail()
             case .failure(let error):
                 if let networkError = error as? NetworkError {
-                    XCTAssertNotNil(networkError)
+                    XCTAssertEqual(networkError, NetworkError.decodingFailed(message: error.localizedDescription))
                 }
             }
         }

@@ -6,7 +6,7 @@
 import Foundation
 
 protocol PolicyAPI {
-    func getData(completion: @escaping (Result<PolicyData, NetworkError>) -> Void)
+    func getData(on queue: DispatchQueue, completion: @escaping (Result<PolicyData, NetworkError>) -> Void)
 }
 
 final class PolicyAPIClient: PolicyAPI {
@@ -19,14 +19,20 @@ final class PolicyAPIClient: PolicyAPI {
         self.baseUrl = baseUrl
     }
     
-    func getData(completion: @escaping (Result<PolicyData, NetworkError>) -> Void) {
+    func getData(on queue: DispatchQueue = .main, completion: @escaping (Result<PolicyData, NetworkError>) -> Void) {
         let endpoint = Endpoint<PolicyData>(method: .get, path: "", parameters: nil, decode: policyDataDecoding, cachePolicy: .useProtocolCachePolicy)
         self.networking.request(endpoint, baseURL: baseUrl) { result in
-            switch result {
-                case .success(let respose):
-                    completion(.success(respose.result))
-                case .failure(let error):
-                    completion(.failure(NetworkError.error(message: error.localizedDescription)))
+            queue.async {
+                switch result {
+                    case .success(let respose):
+                        completion(.success(respose.result))
+                    case .failure(let error):
+                        if let error = error as? NetworkError {
+                            completion(.failure(error))
+                        } else {
+                            completion(.failure(NetworkError.error(message: error.localizedDescription)))
+                    }
+                }
             }
         }
     }
