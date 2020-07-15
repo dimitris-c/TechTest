@@ -4,34 +4,48 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol PolicyPersistence {
-    func getData() -> PolicyData?
-    func save(data: PolicyData)
-}
+    func store(policyData: PolicyData)
+    
+    func retrievePolicies() -> Results<Policy>
+    func retrieveTransactions() -> Results<PolicyTransaction>
 
+}
 
 final class PolicyPersistenceService: PolicyPersistence {
     
     private let persistence: Persistence
-    private let key: String = "policy_data"
+    
     
     init(persistence: Persistence) {
         self.persistence = persistence
     }
-    
-    func getData() -> PolicyData? {
-        guard let data = self.persistence.get(key: key) else {
-            return nil
+
+    func store(policyData: PolicyData) {
+        persistence.write { realm in
+            for item in policyData.data {
+                switch item.payload {
+                    case .created(let value):
+                        realm.add(value, update: .modified)
+                    case .transaction(let value):
+                        realm.add(value, update: .modified)
+                    case .cancelled(let value):
+                        realm.add(value, update: .modified)
+                    case .unknown:
+                        continue
+                }
+            }
         }
-        return self.persistence.decode(PolicyData.self, data: data, decoder: policyDecoder)
     }
     
-    func save(data: PolicyData) {
-        guard let encoded = self.persistence.encode(object: data, encoder: policyEncoder) else {
-            return
-        }
-        self.persistence.save(value: encoded, key: key)
+    func retrieveTransactions() -> Results<PolicyTransaction> {
+        self.persistence.retrieve(type: PolicyTransaction.self)
+    }
+    
+    func retrievePolicies() -> Results<Policy> {
+        self.persistence.retrieve(type: Policy.self)
     }
     
 }

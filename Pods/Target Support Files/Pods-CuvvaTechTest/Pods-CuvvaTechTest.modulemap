@@ -1,0 +1,6 @@
+framework module Pods_CuvvaTechTest {
+  umbrella header "Pods-CuvvaTechTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

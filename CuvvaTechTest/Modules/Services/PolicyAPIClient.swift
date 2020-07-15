@@ -28,7 +28,7 @@ final class PolicyAPIClient: PolicyAPI {
                 guard let self = self else { return }
                 switch result {
                     case .success(let value):
-                        self.persistence.save(data: value.result)
+                        self.persistence.store(policyData: value.result)
                         completion(.success(value.result))
                     case .failure(let error):
                         if let error = error as? NetworkError {

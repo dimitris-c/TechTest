@@ -4,30 +4,47 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Policy: Codable, Equatable {
-    let userId: String
-    let userRevision: String
-    let policyId: String
-    let originalPolicyId: String
-    let referenceCode: String
-    let startDate: Date
-    let endDate: Date
-    let incidentPhone: String
-    let vehicle: Vehicle
-    let documents: Decuments
+class Policy: Object, Codable {
+    @objc dynamic var userId: String = ""
+    @objc dynamic var userRevision: String = ""
+    @objc dynamic var policyId: String = ""
+    @objc dynamic var originalPolicyId: String = ""
+    @objc dynamic var referenceCode: String = ""
+    @objc dynamic var startDate: Date?
+    @objc dynamic var endDate: Date?
+    @objc dynamic var incidentPhone: String = ""
+    @objc dynamic var vehicle: Vehicle? = nil
+    @objc dynamic var documents: Decuments? = nil
+    
+    override class func primaryKey() -> String? {
+        return "policyId"
+    }
+    
+    var isExtensionPolicy: Bool {
+        return policyId != originalPolicyId
+    }
+    
+    var isActive: Bool {
+        guard let startDate = startDate, let endDate = endDate else {
+            return false
+        }
+        let now = Date()
+        return (startDate...endDate).contains(now)
+    }
 }
 
-struct Decuments: Codable, Equatable {
-    let certificateUrl: String
-    let termsUrl: String
+class Decuments: Object, Codable {
+    @objc dynamic var certificateUrl: String = ""
+    @objc dynamic var termsUrl: String = ""
 }
 
-struct Vehicle: Codable, Equatable {
-    let vrm: String
-    let prettyVrm: String
-    let make: String
-    let model: String
-    let variant: String?
-    let color: String
+class Vehicle: Object, Codable {
+    @objc dynamic var vrm: String = ""
+    @objc dynamic var prettyVrm: String = ""
+    @objc dynamic var make: String = ""
+    @objc dynamic var model: String = ""
+    @objc dynamic var variant: String? = nil
+    @objc dynamic var color: String = ""
 }

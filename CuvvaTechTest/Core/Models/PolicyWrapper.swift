@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct PolicyWrapper: Codable, Equatable {
     let type: String

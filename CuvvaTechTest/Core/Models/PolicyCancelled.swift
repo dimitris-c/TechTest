@@ -4,9 +4,21 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct PolicyCancelled: Codable, Equatable {
-    let policyId: String
-    let type: String
-    let newEndDate: Date?
+class PolicyCancelled: Object, Codable {
+    @objc dynamic var policyId: String = ""
+    @objc dynamic var type: String = ""
+    // Realm doesn't support variables names that start with `new`
+    @objc dynamic var endDate: Date? = nil
+    
+    override class func primaryKey() -> String? {
+        return "policyId"
+    }
+    
+    enum PolicyCancelledKeys: String, CodingKey {
+        case policyId
+        case type
+        case newEndDate
+    }
 }

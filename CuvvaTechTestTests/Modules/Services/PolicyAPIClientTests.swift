@@ -20,10 +20,11 @@ class PolicyAPIClientTests: XCTestCase {
         let data = PolicyMockData.jsonData
         let mockSession = MockNetworkingSession(response: response, data: data, error: nil)
         let networking = NetworkingClient(session: mockSession)
+        let persistence = PolicyPersistenceService(persistence: PersistenceService())
         
-        let expectedData = expectedPolicyData(from: data)
+        let expectedData = convertDataToPolicyData(from: data)
         
-        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url)
+        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData { result in
             switch result {
                 case .success(let data):
@@ -40,12 +41,13 @@ class PolicyAPIClientTests: XCTestCase {
         let data = PolicyMockData.jsonData
         let mockSession = MockNetworkingSession(response: response, data: data, error: nil)
         let networking = NetworkingClient(session: mockSession)
+        let persistence = PolicyPersistenceService(persistence: PersistenceService())
         
-        let expectedData = expectedPolicyData(from: data)
+        let expectedData = convertDataToPolicyData(from: data)
         
         let dispatchQueue = DispatchQueue(label: "some.queue")
         
-        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url)
+         let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData(on: dispatchQueue) { result in
             switch result {
                 case .success(let data):
@@ -62,8 +64,9 @@ class PolicyAPIClientTests: XCTestCase {
         let data = PolicyMockData.jsonEmptyPayloadData
         let mockSession = MockNetworkingSession(response: response, data: data, error: nil)
         let networking = NetworkingClient(session: mockSession)
+        let persistence = PolicyPersistenceService(persistence: PersistenceService())
         
-        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url)
+         let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData { result in
             switch result {
                 case .success:
@@ -78,8 +81,9 @@ class PolicyAPIClientTests: XCTestCase {
         let givenError = NetworkError.error(message: "some error message")
         let mockSession = MockNetworkingSession(response: nil, data: nil, error: givenError)
         let networking = NetworkingClient(session: mockSession)
+        let persistence = PolicyPersistenceService(persistence: PersistenceService())
         
-        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url)
+         let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData { result in
             switch result {
                 case .success:
@@ -90,21 +94,4 @@ class PolicyAPIClientTests: XCTestCase {
         }
     }
     
-    private func expectedPolicyData(from data: Data) -> PolicyData? {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(.iso8601)
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
-        return try? decoder.decode(PolicyData.self, from: data)
-    }
-}
-
-class PolicyMockData {
-    static var jsonData: Data {
-        jsonTestData.data(using: .utf8)!
-    }
-    
-    static var jsonEmptyPayloadData: Data {
-        jsonTestDataEmptyPayload.data(using: .utf8)!
-    }
 }
