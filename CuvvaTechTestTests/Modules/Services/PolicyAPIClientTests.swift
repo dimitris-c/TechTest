@@ -6,34 +6,45 @@
 //  Copyright © 2020 Dimitrios Chatzieleftheriou. All rights reserved.
 //
 
-import Foundation
 import XCTest
+import RealmSwift
+
 @testable import CuvvaTechTest
 
 
 class PolicyAPIClientTests: XCTestCase {
     
     private let url = URL(string: "http://some.domain.com")!
-
-    func testApiClientReturnsData() {
+    
+    override func setUp() {
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+    }
+    
+    func testApiClientReturnsDataAndSavesResposeToPersistence() {
         let response = HTTPURLResponse(url: self.url, statusCode: 200, httpVersion: nil, headerFields: nil)!
         let data = PolicyMockData.jsonData
         let mockSession = MockNetworkingSession(response: response, data: data, error: nil)
         let networking = NetworkingClient(session: mockSession)
         let persistence = PolicyPersistenceService(persistence: PersistenceService())
         
-        let expectedData = convertDataToPolicyData(from: data)
+        let expectation = self.expectation(description: "data expectation")
         
         let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData { result in
             switch result {
-                case .success(let data):
+                case .success(let result):
                     dispatchPrecondition(condition: .onQueue(.main))
-                    XCTAssertEqual(data, expectedData)
+                    XCTAssertFalse(result.data.isEmpty)
+                    persistence.dispatchQueue.sync { }
+                    let policies = persistence.retrievePolicies()
+                    XCTAssertFalse(policies.isEmpty)
+                    expectation.fulfill()
                 case .failure:
                     XCTFail()
             }
         }
+        
+        wait(for: [expectation], timeout: 10)
     }
     
     func testApiClientReturnsDataOnSpecifiedQueue() {
@@ -42,21 +53,24 @@ class PolicyAPIClientTests: XCTestCase {
         let mockSession = MockNetworkingSession(response: response, data: data, error: nil)
         let networking = NetworkingClient(session: mockSession)
         let persistence = PolicyPersistenceService(persistence: PersistenceService())
-        
-        let expectedData = convertDataToPolicyData(from: data)
-        
+                
         let dispatchQueue = DispatchQueue(label: "some.queue")
         
-         let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
+        let expectation = self.expectation(description: "data expectation")
+        
+        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData(on: dispatchQueue) { result in
             switch result {
-                case .success(let data):
+                case .success(let result):
                     dispatchPrecondition(condition: .onQueue(dispatchQueue))
-                    XCTAssertEqual(data, expectedData)
+                    XCTAssertFalse(result.data.isEmpty)
+                    expectation.fulfill()
                 case .failure:
                     XCTFail()
             }
         }
+        
+        wait(for: [expectation], timeout: 10)
     }
     
     func testApiClientReturnsDataWithEmptyPayloadShouldError() {
@@ -66,7 +80,7 @@ class PolicyAPIClientTests: XCTestCase {
         let networking = NetworkingClient(session: mockSession)
         let persistence = PolicyPersistenceService(persistence: PersistenceService())
         
-         let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
+        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData { result in
             switch result {
                 case .success:
@@ -83,7 +97,7 @@ class PolicyAPIClientTests: XCTestCase {
         let networking = NetworkingClient(session: mockSession)
         let persistence = PolicyPersistenceService(persistence: PersistenceService())
         
-         let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
+        let sut = PolicyAPIClient(networking: networking, baseUrl: self.url, persistence: persistence)
         sut.getData { result in
             switch result {
                 case .success:
