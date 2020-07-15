@@ -16,26 +16,38 @@ class Policy: Object, Codable {
     @objc dynamic var endDate: Date?
     @objc dynamic var incidentPhone: String = ""
     @objc dynamic var vehicle: Vehicle? = nil
-    @objc dynamic var documents: Decuments? = nil
+    @objc dynamic var documents: Documents? = nil
     
-    override class func primaryKey() -> String? {
-        return "policyId"
-    }
+    @objc dynamic var cancelled: PolicyCancelled? = nil
+    
+    let transactions = List<PolicyTransaction>()
+    let extensionPolicies = List<Policy>()
     
     var isExtensionPolicy: Bool {
         return policyId != originalPolicyId
     }
     
-    var isActive: Bool {
-        guard let startDate = startDate, let endDate = endDate else {
+}
+
+extension Policy {
+    func isActive() -> Bool {
+        guard let startDate = self.startDate else { return false }
+        let latestExtensionPolicy = extensionPolicies.first { policy -> Bool in
+            guard policy.cancelled == nil else { return false }
+            guard let endDate = self.endDate, let policyEndDate = policy.endDate else {
+                return false
+            }
+            return policyEndDate > endDate
+        }
+        guard let latestExtensionPolicyEndDate = latestExtensionPolicy?.endDate ?? self.endDate else {
             return false
         }
         let now = Date()
-        return (startDate...endDate).contains(now)
+        return (startDate...latestExtensionPolicyEndDate).contains(now)
     }
 }
 
-class Decuments: Object, Codable {
+class Documents: Object, Codable {
     @objc dynamic var certificateUrl: String = ""
     @objc dynamic var termsUrl: String = ""
 }

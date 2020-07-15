@@ -51,3 +51,28 @@ enum PolicyType: Codable, Equatable {
         }
     }
 }
+
+extension PolicyType {
+    
+    var policy: Policy? {
+        if case let .created(policy) = self {
+            return policy
+        }
+        return nil
+    }
+    
+    var transaction: PolicyTransaction? {
+        if case let .transaction(transaction) = self {
+            return transaction
+        }
+        return nil
+    }
+    
+    var cancelled: PolicyCancelled? {
+        if case let .cancelled(cancelled) = self {
+            return cancelled
+        }
+        return nil
+    }
+    
+}

@@ -27,28 +27,19 @@ struct PolicyData: Codable, Equatable {
     
     func policies() -> [Policy] {
         return data.compactMap { wrapper -> Policy? in
-            if case let .created(policy) = wrapper.payload {
-                return policy
-            }
-            return nil
+            wrapper.payload.policy
         }
     }
     
     func transactions() -> [PolicyTransaction] {
         return data.compactMap { wrapper -> PolicyTransaction? in
-            if case let .transaction(transaction) = wrapper.payload {
-                return transaction
-            }
-            return nil
+            wrapper.payload.transaction
         }
     }
     
     func cancelled() -> [PolicyCancelled] {
         return data.compactMap { wrapper -> PolicyCancelled? in
-            if case let .cancelled(policy) = wrapper.payload {
-                return policy
-            }
-            return nil
+            wrapper.payload.cancelled
         }
     }
     
