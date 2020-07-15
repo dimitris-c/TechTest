@@ -20,6 +20,10 @@ class Policy: Object, Codable {
     
     @objc dynamic var cancelled: PolicyCancelled? = nil
     
+    override class func primaryKey() -> String? {
+        return "policyId"
+    }
+    
     let transactions = List<PolicyTransaction>()
     let extensionPolicies = List<Policy>()
     
@@ -59,4 +63,8 @@ class Vehicle: Object, Codable {
     @objc dynamic var model: String = ""
     @objc dynamic var variant: String? = nil
     @objc dynamic var color: String = ""
+    
+    override class func primaryKey() -> String? {
+        return "vrm"
+    }
 }

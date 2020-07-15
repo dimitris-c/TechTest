@@ -50,21 +50,4 @@ class PolicyPersistenceTests: XCTestCase {
         XCTAssertFalse(policies.isEmpty)
     }
 
-    func testPersistenceCanRetrieveTransactions() {
-     
-        let persistence = PolicyPersistenceService(persistence: PersistenceService())
-        
-        let policyData = convertDataToPolicyData(from: PolicyMockData.jsonData)
-        XCTAssertNotNil(policyData)
-        
-        persistence.store(policyData: policyData!)
-        
-        // force an empty sync to delay assertion
-        persistence.dispatchQueue.sync { }
-        
-        let policies = persistence.retrieveTransactions()
-        XCTAssertFalse(policies.isEmpty)
-    }
-
-
 }

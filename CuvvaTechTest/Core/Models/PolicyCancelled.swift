@@ -12,6 +12,10 @@ class PolicyCancelled: Object, Codable {
     // Realm doesn't support variables names that start with `new`
     @objc dynamic var endDate: Date? = nil
     
+    override class func primaryKey() -> String? {
+        return "policyId"
+    }
+    
     enum PolicyCancelledKeys: String, CodingKey {
         case policyId
         case type

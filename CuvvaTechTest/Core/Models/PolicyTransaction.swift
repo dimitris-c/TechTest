@@ -9,6 +9,10 @@ import RealmSwift
 class PolicyTransaction: Object, Codable {
     @objc dynamic var policyId: String = ""
     @objc dynamic var pricing: Receipt? = nil
+    
+    override class func primaryKey() -> String? {
+        return "policyId"
+    }
 }
 
 class Receipt: Object, Codable {

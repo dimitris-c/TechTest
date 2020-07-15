@@ -10,8 +10,6 @@ protocol PolicyPersistence {
     func store(policyData: PolicyData)
     
     func retrievePolicies() -> Results<Policy>
-    func retrieveTransactions() -> Results<PolicyTransaction>
-    
 }
 
 final class PolicyPersistenceService: PolicyPersistence {
@@ -29,7 +27,7 @@ final class PolicyPersistenceService: PolicyPersistence {
             guard let self = self else { return }
             self.persistence.write { realm in
                 let processedPolicies = self.process(policyData: policyData)
-                realm.add(processedPolicies, update: .error)
+                realm.add(processedPolicies, update: .modified)
             }
         }
     }
@@ -47,10 +45,6 @@ final class PolicyPersistenceService: PolicyPersistence {
             policy.cancelled = cancelledPolicies
         }
         return policies
-    }
-    
-    func retrieveTransactions() -> Results<PolicyTransaction> {
-        self.persistence.retrieve(type: PolicyTransaction.self)
     }
     
     func retrievePolicies() -> Results<Policy> {
