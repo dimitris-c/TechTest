@@ -12,23 +12,19 @@ protocol PolicyAPI {
 final class PolicyAPIClient: PolicyAPI {
     
     private let networking: Networking
-    private let persistence: PolicyPersistence
     private let baseUrl: URL
     
-    init(networking: Networking, baseUrl: URL, persistence: PolicyPersistence) {
+    init(networking: Networking, baseUrl: URL) {
         self.networking = networking
         self.baseUrl = baseUrl
-        self.persistence = persistence
     }
     
     func getData(on queue: DispatchQueue = .main, completion: @escaping (Result<PolicyData, NetworkError>) -> Void) {
         let endpoint = Endpoint<PolicyData>(method: .get, path: "", parameters: nil, decode: policyDataDecoding, cachePolicy: .useProtocolCachePolicy)
         self.networking.request(endpoint, baseURL: baseUrl) { result in
-            queue.async { [weak self] in
-                guard let self = self else { return }
+            queue.async {
                 switch result {
                     case .success(let value):
-                        self.persistence.store(policyData: value.result)
                         completion(.success(value.result))
                     case .failure(let error):
                         if let error = error as? NetworkError {

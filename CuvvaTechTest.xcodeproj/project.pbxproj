@@ -21,7 +21,7 @@
 		B5C58E3924BDCCC400566FB4 /* PolicyTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3824BDCCC400566FB4 /* PolicyTransaction.swift */; };
 		B5C58E3B24BDCCE000566FB4 /* PolicyCancelled.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3A24BDCCE000566FB4 /* PolicyCancelled.swift */; };
 		B5C58E3D24BDCCFE00566FB4 /* PolicyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3C24BDCCFE00566FB4 /* PolicyType.swift */; };
-		B5C58E3F24BDCDF500566FB4 /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3E24BDCDF500566FB4 /* DateFormatter+Utils.swift */; };
+		B5C58E3F24BDCDF500566FB4 /* DateFormatter+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E3E24BDCDF500566FB4 /* DateFormatter+Convenience.swift */; };
 		B5C58E4524BDD41D00566FB4 /* PolicyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E4424BDD41D00566FB4 /* PolicyAPIClient.swift */; };
 		B5C58E4724BDD4C100566FB4 /* PolicyAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E4624BDD4C100566FB4 /* PolicyAPIConfig.swift */; };
 		B5C58E4B24BDD9F100566FB4 /* PolicyAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E4A24BDD9F100566FB4 /* PolicyAPIClientTests.swift */; };
@@ -34,6 +34,17 @@
 		B5C58F0F24BEF43E00566FB4 /* PolicyPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F0E24BEF43E00566FB4 /* PolicyPersistenceTests.swift */; };
 		B5C58F1324BEF4F400566FB4 /* PolicyMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F1124BEF4DC00566FB4 /* PolicyMockData.swift */; };
 		B5C58F1524BF0B1C00566FB4 /* PolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F1424BF0B1C00566FB4 /* PolicyTests.swift */; };
+		B5C58F1C24BF454D00566FB4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F1A24BF454D00566FB4 /* HomeViewController.swift */; };
+		B5C58F1D24BF454D00566FB4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F1B24BF454D00566FB4 /* HomeViewModel.swift */; };
+		B5C58F2024BF468E00566FB4 /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F1F24BF468E00566FB4 /* HomeWireframe.swift */; };
+		B5C58F2724BF873400566FB4 /* HomeActivePolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F2624BF873400566FB4 /* HomeActivePolicyCell.swift */; };
+		B5C58FC824C03C1F00566FB4 /* TitleAndSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FC724C03C1F00566FB4 /* TitleAndSubtitleView.swift */; };
+		B5C58FCA24C046A400566FB4 /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */; };
+		B5C58FCD24C049F700566FB4 /* HomeModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FCC24C049F700566FB4 /* HomeModelDataSource.swift */; };
+		B5C58FD024C04BA600566FB4 /* HomeSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FCF24C04BA600566FB4 /* HomeSectionModel.swift */; };
+		B5C58FD224C05EEA00566FB4 /* TitleHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */; };
+		B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */; };
+		B5C58FD624C0683B00566FB4 /* UICollectionView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */; };
 		B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2617C24BC8D5900202207 /* AppDelegate.swift */; };
 		B5F2618624BC8D5A00202207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618524BC8D5A00202207 /* Assets.xcassets */; };
 		B5F2618924BC8D5A00202207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618724BC8D5A00202207 /* LaunchScreen.storyboard */; };
@@ -69,7 +80,7 @@
 		B5C58E3824BDCCC400566FB4 /* PolicyTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyTransaction.swift; sourceTree = "<group>"; };
 		B5C58E3A24BDCCE000566FB4 /* PolicyCancelled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyCancelled.swift; sourceTree = "<group>"; };
 		B5C58E3C24BDCCFE00566FB4 /* PolicyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyType.swift; sourceTree = "<group>"; };
-		B5C58E3E24BDCDF500566FB4 /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
+		B5C58E3E24BDCDF500566FB4 /* DateFormatter+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Convenience.swift"; sourceTree = "<group>"; };
 		B5C58E4424BDD41D00566FB4 /* PolicyAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAPIClient.swift; sourceTree = "<group>"; };
 		B5C58E4624BDD4C100566FB4 /* PolicyAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAPIConfig.swift; sourceTree = "<group>"; };
 		B5C58E4A24BDD9F100566FB4 /* PolicyAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyAPIClientTests.swift; sourceTree = "<group>"; };
@@ -81,6 +92,17 @@
 		B5C58F0E24BEF43E00566FB4 /* PolicyPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyPersistenceTests.swift; sourceTree = "<group>"; };
 		B5C58F1124BEF4DC00566FB4 /* PolicyMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyMockData.swift; sourceTree = "<group>"; };
 		B5C58F1424BF0B1C00566FB4 /* PolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyTests.swift; sourceTree = "<group>"; };
+		B5C58F1A24BF454D00566FB4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B5C58F1B24BF454D00566FB4 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B5C58F1F24BF468E00566FB4 /* HomeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
+		B5C58F2624BF873400566FB4 /* HomeActivePolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActivePolicyCell.swift; sourceTree = "<group>"; };
+		B5C58FC724C03C1F00566FB4 /* TitleAndSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndSubtitleView.swift; sourceTree = "<group>"; };
+		B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		B5C58FCC24C049F700566FB4 /* HomeModelDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelDataSource.swift; sourceTree = "<group>"; };
+		B5C58FCF24C04BA600566FB4 /* HomeSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionModel.swift; sourceTree = "<group>"; };
+		B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionView.swift; sourceTree = "<group>"; };
+		B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVehicleCell.swift; sourceTree = "<group>"; };
+		B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Convenience.swift"; sourceTree = "<group>"; };
 		B5F2617924BC8D5900202207 /* CuvvaTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuvvaTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F2617C24BC8D5900202207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F2618524BC8D5A00202207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +173,7 @@
 		B5C58E2824BD9F4900566FB4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B5C58FC624C03C0C00566FB4 /* UI */,
 				B5C58E2E24BDA56A00566FB4 /* ServicesContainer.swift */,
 				B50061A724BC9A9F009264DF /* Networking */,
 				B5C58E3124BDA88400566FB4 /* Models */,
@@ -165,16 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				B5C58E4324BDD40B00566FB4 /* Services */,
-				B5C58E3024BDA7AC00566FB4 /* Main */,
+				B5C58F1E24BF455600566FB4 /* Home */,
+				B5C58F1F24BF468E00566FB4 /* HomeWireframe.swift */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		B5C58E3024BDA7AC00566FB4 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		B5C58E3124BDA88400566FB4 /* Models */ = {
@@ -193,7 +210,8 @@
 		B5C58E4024BDCE4800566FB4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B5C58E3E24BDCDF500566FB4 /* DateFormatter+Utils.swift */,
+				B5C58E3E24BDCDF500566FB4 /* DateFormatter+Convenience.swift */,
+				B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +270,53 @@
 				B5C58E4C24BDDAF300566FB4 /* SamplePolicyJson.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B5C58F1E24BF455600566FB4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B5C58FCB24C0470A00566FB4 /* DataSource */,
+				B5C58F2324BF870500566FB4 /* Cells */,
+				B5C58F1A24BF454D00566FB4 /* HomeViewController.swift */,
+				B5C58F1B24BF454D00566FB4 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B5C58F2324BF870500566FB4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */,
+				B5C58F2624BF873400566FB4 /* HomeActivePolicyCell.swift */,
+				B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B5C58FC624C03C0C00566FB4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B5C58FC724C03C1F00566FB4 /* TitleAndSubtitleView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B5C58FCB24C0470A00566FB4 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */,
+				B5C58FCE24C04B9700566FB4 /* Models */,
+				B5C58FCC24C049F700566FB4 /* HomeModelDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		B5C58FCE24C04B9700566FB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5C58FCF24C04BA600566FB4 /* HomeSectionModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B5F2617024BC8D5800202207 = {
@@ -466,8 +531,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C58FCD24C049F700566FB4 /* HomeModelDataSource.swift in Sources */,
+				B5C58FD624C0683B00566FB4 /* UICollectionView+Convenience.swift in Sources */,
 				B5C58F0724BE429800566FB4 /* Pesistence.swift in Sources */,
 				B5C58E2F24BDA56A00566FB4 /* ServicesContainer.swift in Sources */,
+				B5C58F1C24BF454D00566FB4 /* HomeViewController.swift in Sources */,
+				B5C58F1D24BF454D00566FB4 /* HomeViewModel.swift in Sources */,
 				B5C58E2A24BD9F5900566FB4 /* DesignStyling.swift in Sources */,
 				B5C58E2424BD9AE100566FB4 /* URLSession+Networking.swift in Sources */,
 				B5C58E3924BDCCC400566FB4 /* PolicyTransaction.swift in Sources */,
@@ -475,13 +544,20 @@
 				B5C58E2224BD9A5300566FB4 /* NetworkingClient.swift in Sources */,
 				B5C58E3D24BDCCFE00566FB4 /* PolicyType.swift in Sources */,
 				B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */,
+				B5C58FD024C04BA600566FB4 /* HomeSectionModel.swift in Sources */,
+				B5C58FD224C05EEA00566FB4 /* TitleHeaderCollectionView.swift in Sources */,
 				B5C58E4524BDD41D00566FB4 /* PolicyAPIClient.swift in Sources */,
-				B5C58E3F24BDCDF500566FB4 /* DateFormatter+Utils.swift in Sources */,
+				B5C58E3F24BDCDF500566FB4 /* DateFormatter+Convenience.swift in Sources */,
 				B5C58E3B24BDCCE000566FB4 /* PolicyCancelled.swift in Sources */,
 				B5C58F0924BE48DA00566FB4 /* PolicyPersistence.swift in Sources */,
+				B5C58FC824C03C1F00566FB4 /* TitleAndSubtitleView.swift in Sources */,
 				B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */,
+				B5C58FCA24C046A400566FB4 /* HomeCollectionViewDataSource.swift in Sources */,
 				B5C58E4724BDD4C100566FB4 /* PolicyAPIConfig.swift in Sources */,
+				B5C58F2024BF468E00566FB4 /* HomeWireframe.swift in Sources */,
+				B5C58F2724BF873400566FB4 /* HomeActivePolicyCell.swift in Sources */,
 				B5C58E2D24BDA42C00566FB4 /* AppController.swift in Sources */,
+				B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */,
 				B5C58E3524BDCC7700566FB4 /* PolicyData.swift in Sources */,
 				B5C58E3324BDA8BF00566FB4 /* PolicyWrapper.swift in Sources */,
 			);

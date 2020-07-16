@@ -7,6 +7,7 @@ import Foundation
 
 protocol Services {
     var networkingClient: Networking { get }
+    var persistence: Persistence { get }
 }
 
 final class ServicesContainer: Services {

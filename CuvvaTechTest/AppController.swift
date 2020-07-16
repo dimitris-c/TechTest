@@ -21,7 +21,9 @@ final class AppController {
     }
     
     private func buildMain() -> UIViewController {
-         return UIViewController()
+        let homeWireframe = HomeWireframe(networking: services.networkingClient,
+                                          persistence: services.persistence)
+        return homeWireframe.prepareModule()
     }
     
 }

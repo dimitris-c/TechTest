@@ -23,6 +23,7 @@ class PersistenceTests: XCTestCase {
         
         let vehicle = Vehicle()
         vehicle.make = "Mini"
+        vehicle.vrm = UUID().uuidString
         
         persistence.store(vehicle)
         
@@ -39,6 +40,7 @@ class PersistenceTests: XCTestCase {
         let vehicles: [Vehicle] = vehiclesMakes.map { make in
             let vehicle = Vehicle()
             vehicle.make = make
+            vehicle.vrm = UUID().uuidString
             return vehicle
         }
 
@@ -60,6 +62,7 @@ class PersistenceTests: XCTestCase {
         let vehicles: [Vehicle] = vehiclesMakes.map { make in
             let vehicle = Vehicle()
             vehicle.make = make
+            vehicle.vrm = UUID().uuidString
             return vehicle
         }
 

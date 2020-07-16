@@ -26,9 +26,6 @@ class PolicyPersistenceTests: XCTestCase {
         
         persistence.store(policyData: policyData!)
         
-        // force an empty sync to delay assertion
-        persistence.dispatchQueue.sync { }
-        
         let realm = try! Realm()
         let policies = realm.objects(Policy.self)
         XCTAssertFalse(policies.isEmpty)
@@ -42,9 +39,6 @@ class PolicyPersistenceTests: XCTestCase {
         XCTAssertNotNil(policyData)
         
         persistence.store(policyData: policyData!)
-        
-        // force an empty sync to delay assertion
-        persistence.dispatchQueue.sync { }
         
         let policies = persistence.retrievePolicies()
         XCTAssertFalse(policies.isEmpty)

@@ -16,19 +16,14 @@ final class PolicyPersistenceService: PolicyPersistence {
     
     private let persistence: Persistence
     
-    let dispatchQueue = DispatchQueue(label: "persistence.queue", qos: .background)
-    
     init(persistence: Persistence) {
         self.persistence = persistence
     }
     
     func store(policyData: PolicyData) {
-        dispatchQueue.async { [weak self] in
-            guard let self = self else { return }
-            self.persistence.write { realm in
-                let processedPolicies = self.process(policyData: policyData)
-                realm.add(processedPolicies, update: .modified)
-            }
+        self.persistence.write { realm in
+            let processedPolicies = self.process(policyData: policyData)
+            realm.add(processedPolicies, update: .modified)
         }
     }
     
@@ -48,7 +43,7 @@ final class PolicyPersistenceService: PolicyPersistence {
     }
     
     func retrievePolicies() -> Results<Policy> {
-        self.persistence.retrieve(type: Policy.self)
+        persistence.retrieve(type: Policy.self)
     }
     
 }
