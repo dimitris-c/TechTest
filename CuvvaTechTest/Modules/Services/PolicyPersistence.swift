@@ -9,7 +9,10 @@ import RealmSwift
 protocol PolicyPersistence {
     func store(policyData: PolicyData)
     
+    func retrieveVehicles() -> Results<Vehicle>
+    
     func retrievePolicies() -> Results<Policy>
+    
 }
 
 final class PolicyPersistenceService: PolicyPersistence {
@@ -38,12 +41,17 @@ final class PolicyPersistenceService: PolicyPersistence {
             policy.extensionPolicies.append(objectsIn: extensionPolicies)
             let cancelledPolicies = cancelled.first { $0.policyId == policy.policyId }
             policy.cancelled = cancelledPolicies
+            policy.vehicle?.policy = policy
         }
         return policies
     }
     
     func retrievePolicies() -> Results<Policy> {
         persistence.retrieve(type: Policy.self)
+    }
+    
+    func retrieveVehicles() -> Results<Vehicle> {
+        persistence.retrieve(type: Vehicle.self)
     }
     
 }

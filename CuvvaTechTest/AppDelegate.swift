@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         appController.start()
         
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString)
+        
         return true
     }
     

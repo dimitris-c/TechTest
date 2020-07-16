@@ -12,7 +12,9 @@ class HomeVehicleCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor.white
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
+        imageView.tintColor = DesignStyling.Colours.darkIndigo
         return imageView
     }()
     
@@ -52,7 +54,7 @@ class HomeVehicleCell: UICollectionViewCell {
         return view
     }()
     
-    private let extendButton = UIButton()
+    private let extendButton = UIButton(type: .custom)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,10 +77,19 @@ class HomeVehicleCell: UICollectionViewCell {
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 8
         
+        extendButton.setTitle("Insure", for: .normal)
+        extendButton.setTitleColor(DesignStyling.Colours.secondaryCTA, for: .normal)
+        extendButton.setTitleColor(DesignStyling.Colours.darkIndigo, for: .highlighted)
+        extendButton.titleLabel?.font = DesignStyling.Fonts.title
+        extendButton.backgroundColor = DesignStyling.Colours.viewsBackground
+        extendButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 20, bottom: 8, right: 20)
+        extendButton.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(extendButton)
+        
         let stackView = UIStackView(arrangedSubviews: [logoView, carMakeAndTypeView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.spacing = 10
         contentView.addSubview(stackView)
@@ -88,22 +99,18 @@ class HomeVehicleCell: UICollectionViewCell {
         bottomPartStackView.axis = .horizontal
         bottomPartStackView.distribution = .fill
         bottomPartStackView.alignment = .fill
-        bottomPartStackView.spacing = 10
+        bottomPartStackView.spacing = 35
         contentView.addSubview(bottomPartStackView)
-        
-        extendButton.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(extendButton)
         
         NSLayoutConstraint.activate([
             logoView.widthAnchor.constraint(equalToConstant: 45),
             logoView.heightAnchor.constraint(equalTo: logoView.widthAnchor),
             extendButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             extendButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            extendButton.heightAnchor.constraint(equalToConstant: 35),
-            extendButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 150),
+            extendButton.widthAnchor.constraint(equalToConstant: 110),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            stackView.topAnchor.constraint(equalTo: extendButton.topAnchor),
-            stackView.trailingAnchor.constraint(lessThanOrEqualTo: extendButton.leadingAnchor, constant: 5),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            stackView.trailingAnchor.constraint(lessThanOrEqualTo: extendButton.leadingAnchor, constant: 0),
             bottomPartStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             bottomPartStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 15),
             bottomPartStackView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -15),
@@ -111,4 +118,22 @@ class HomeVehicleCell: UICollectionViewCell {
         
     }
     
+    func configure(item: VehicleDisplayModel) {
+        
+        self.carMakeAndTypeView.update(title: item.carMakeTitle, subtitle: item.carMakeSubtitle)
+        self.logoView.image = item.carMakeLogo
+        self.regPlateView.update(title: item.regPlateTitle, subtitle: item.regPlateValueTitle)
+        self.totalPolicies.update(title: item.totalPoliciesTitle, subtitle: item.totalPoliciesValueTitle)
+        
+        self.layoutIfNeeded()
+    }
+    
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.carMakeAndTypeView.update(title: "", subtitle: "")
+        self.regPlateView.update(title: "", subtitle: "")
+        self.totalPolicies.update(title: "", subtitle: "")
+        self.logoView.image = nil
+    }
 }

@@ -43,5 +43,18 @@ class PolicyPersistenceTests: XCTestCase {
         let policies = persistence.retrievePolicies()
         XCTAssertFalse(policies.isEmpty)
     }
+    
+    func testPersistenceCanRetrieveVehicles() {
+     
+        let persistence = PolicyPersistenceService(persistence: PersistenceService())
+        
+        let policyData = convertDataToPolicyData(from: PolicyMockData.jsonData)
+        XCTAssertNotNil(policyData)
+        
+        persistence.store(policyData: policyData!)
+        
+        let vehicles = persistence.retrieveVehicles()
+        XCTAssertFalse(vehicles.isEmpty)
+    }
 
 }

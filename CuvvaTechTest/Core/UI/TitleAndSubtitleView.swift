@@ -17,9 +17,13 @@ final class TitleSubTitleView: UIStackView {
         self.addArrangedSubview(titleLabel)
         self.addArrangedSubview(subtitleLabel)
         self.axis = .vertical
-        self.distribution = .fill
-        self.alignment = .fill
+        self.distribution = .fillEqually
+        self.alignment = .top
         
+//        titleLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+//        subtitleLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+//        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+//        subtitleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         subtitleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
     }

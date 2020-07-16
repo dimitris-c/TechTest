@@ -3,17 +3,38 @@
 //  Copyright © 2020 Dimitrios Chatzieleftheriou. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 struct ActivePolicyDisplayModel: Equatable {
     
 }
 
 struct VehicleDisplayModel: Equatable {
+    let carMakeTitle: String
+    let carMakeSubtitle: String
+    let carMakeLogo: UIImage
+    
+    let regPlateTitle: String = "Reg Plate"
+    let regPlateValueTitle: String
+    
+    var totalPoliciesTitle: String = "Total Policies"
+    let totalPoliciesValueTitle: String
+    
+    init(vehicle: Vehicle) {
+        self.carMakeTitle = vehicle.make
+        self.carMakeSubtitle = "\(vehicle.color) \(vehicle.model)"
+        self.carMakeLogo = UIImage(named: "\(vehicle.make.lowercased())-logo") ?? UIImage()
+        self.regPlateValueTitle = vehicle.prettyVrm
+        
+        if let policy = vehicle.policy {
+            let extensionsCount = policy.extensionPolicies.count + 1
+            self.totalPoliciesValueTitle = String(extensionsCount)
+        } else {
+            self.totalPoliciesValueTitle = "0"
+        }
+    }
     
 }
-
 
 enum HomeSectionModel: Equatable {
     case active(title: String, items: [HomeSectionItem])

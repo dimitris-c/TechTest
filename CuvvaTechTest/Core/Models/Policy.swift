@@ -64,6 +64,8 @@ class Vehicle: Object, Codable {
     @objc dynamic var variant: String? = nil
     @objc dynamic var color: String = ""
     
+    @objc dynamic var policy: Policy? = nil
+    
     override class func primaryKey() -> String? {
         return "vrm"
     }

@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
         collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
         collectionView.register(HomeActivePolicyCell.self, forCellWithReuseIdentifier: HomeActivePolicyCell.identifier)
+        collectionView.register(HomeVehicleCell.self, forCellWithReuseIdentifier: HomeVehicleCell.identifier)
         collectionView.register(TitleHeaderCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderCollectionView.identifier)
         return collectionView
     }()
@@ -115,7 +116,16 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let layout = collectionViewLayout as? UICollectionViewFlowLayout
         let left = layout?.sectionInset.left ?? 0
         let right = layout?.sectionInset.right ?? 0
-        return CGSize(width: collectionView.bounds.width - (left + right), height: 145)
+        let width = collectionView.bounds.width - (left + right)
+        if let modelType = self.viewModel.dataSource.model(at: indexPath) {
+            switch modelType {
+                case .activeItem:
+                    return CGSize(width: width, height: 145)
+                case .vehicle:
+                    return CGSize(width: width, height: 125)
+            }
+        }
+        return CGSize(width: width, height: 145)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
