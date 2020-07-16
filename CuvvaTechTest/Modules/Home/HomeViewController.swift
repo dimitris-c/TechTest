@@ -6,7 +6,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     private(set) var viewModel: HomeViewModelType
     
     private lazy var collectionView: UICollectionView = {
@@ -83,19 +83,23 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = collectionViewDataSource
         
         self.viewModel.updateContent = { [weak self] effect in
+            guard let self = self else { return }
             switch effect {
                 case .loading:
-                    self?.activityIndicator.startAnimating()
-                    break
+                    self.activityIndicator.startAnimating()
                 case .loaded:
-                    self?.activityIndicator.stopAnimating()
-                    self?.collectionView.alpha = 0.0
-                    self?.collectionView.reloadData()
-                    self?.fadeInCollectionView()
-                case .error(let message):
-                    self?.activityIndicator.stopAnimating()
-                    print(message)
-                    return
+                    self.activityIndicator.stopAnimating()
+                    self.collectionView.alpha = 0.0
+                    self.collectionView.reloadData()
+                    self.fadeInCollectionView()
+                case .error(let title, let message):
+                    self.activityIndicator.stopAnimating()
+                    let okAction: () -> Void = { self.viewModel.perform(action: .reload) }
+                    self.showError(title: title,
+                                    message: message,
+                                    okAction: okAction,
+                                    okActionTitle: "Retry",
+                                    cancelAction: { })
             }
         }
         
@@ -107,7 +111,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

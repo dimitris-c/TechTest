@@ -7,12 +7,13 @@ import Foundation
 
 enum HomeViewAction {
     case viewLoaded
+    case reload
 }
 
 enum HomeViewEffect {
     case loading
     case loaded
-    case error(message: String)
+    case error(title: String, message: String)
 }
 
 protocol HomeViewModelType {
@@ -43,7 +44,7 @@ final class HomeViewModel: HomeViewModelType {
     
     func perform(action: HomeViewAction) {
         switch action {
-            case .viewLoaded:
+            case .viewLoaded, .reload:
                 self.viewLoadedAction()
         }
     }
@@ -65,7 +66,12 @@ final class HomeViewModel: HomeViewModelType {
                     self.convertStoredData()
                     break
                 case .failure(let error):
-                    // check if there's data in persistence and display or error out
+                    if self.policyPersistence.hasStoredContent {
+                        self.convertStoredData()
+                    } else {
+                        self.updateContentOnMain(.error(title: "Network Error",
+                                                        message: error.errorDescription ?? error.localizedDescription))
+                    }
                     break
             }
         }

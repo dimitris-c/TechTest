@@ -20,10 +20,6 @@ final class TitleSubTitleView: UIStackView {
         self.distribution = .fillEqually
         self.alignment = .top
         
-//        titleLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
-//        subtitleLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
-//        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-//        subtitleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
         subtitleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
     }

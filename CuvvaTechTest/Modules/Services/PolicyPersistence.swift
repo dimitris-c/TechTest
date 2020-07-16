@@ -10,8 +10,9 @@ protocol PolicyPersistence {
     func store(policyData: PolicyData)
     
     func retrieveVehicles() -> Results<Vehicle>
-    
     func retrievePolicies() -> Results<Policy>
+    
+    var hasStoredContent: Bool { get }
     
 }
 
@@ -21,6 +22,10 @@ final class PolicyPersistenceService: PolicyPersistence {
     
     init(persistence: Persistence) {
         self.persistence = persistence
+    }
+    
+    var hasStoredContent: Bool {
+        return !retrievePolicies().isEmpty
     }
     
     func store(policyData: PolicyData) {

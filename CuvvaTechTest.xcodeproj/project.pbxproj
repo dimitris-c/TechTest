@@ -45,6 +45,7 @@
 		B5C58FD224C05EEA00566FB4 /* TitleHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */; };
 		B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */; };
 		B5C58FD624C0683B00566FB4 /* UICollectionView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */; };
+		B5C5907624C08DE400566FB4 /* UIViewController+DisplayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */; };
 		B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2617C24BC8D5900202207 /* AppDelegate.swift */; };
 		B5F2618624BC8D5A00202207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618524BC8D5A00202207 /* Assets.xcassets */; };
 		B5F2618924BC8D5A00202207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618724BC8D5A00202207 /* LaunchScreen.storyboard */; };
@@ -103,6 +104,7 @@
 		B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionView.swift; sourceTree = "<group>"; };
 		B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVehicleCell.swift; sourceTree = "<group>"; };
 		B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Convenience.swift"; sourceTree = "<group>"; };
+		B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DisplayError.swift"; sourceTree = "<group>"; };
 		B5F2617924BC8D5900202207 /* CuvvaTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuvvaTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F2617C24BC8D5900202207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F2618524BC8D5A00202207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				B5C58E3E24BDCDF500566FB4 /* DateFormatter+Convenience.swift */,
 				B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */,
+				B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,8 +307,8 @@
 		B5C58FCB24C0470A00566FB4 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */,
 				B5C58FCE24C04B9700566FB4 /* Models */,
+				B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */,
 				B5C58FCC24C049F700566FB4 /* HomeModelDataSource.swift */,
 			);
 			path = DataSource;
@@ -545,6 +548,7 @@
 				B5C58E3D24BDCCFE00566FB4 /* PolicyType.swift in Sources */,
 				B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */,
 				B5C58FD024C04BA600566FB4 /* HomeSectionModel.swift in Sources */,
+				B5C5907624C08DE400566FB4 /* UIViewController+DisplayError.swift in Sources */,
 				B5C58FD224C05EEA00566FB4 /* TitleHeaderCollectionView.swift in Sources */,
 				B5C58E4524BDD41D00566FB4 /* PolicyAPIClient.swift in Sources */,
 				B5C58E3F24BDCDF500566FB4 /* DateFormatter+Convenience.swift in Sources */,
