@@ -5,7 +5,7 @@
 
 import UIKit
 
-class HomeVehicleCell: UICollectionViewCell {
+final class HomeVehicleCell: UICollectionViewCell {
     static let identifier = "home.vehicle.cell.id"
     
     private let logoView: UIImageView = {
@@ -127,7 +127,6 @@ class HomeVehicleCell: UICollectionViewCell {
         
         self.layoutIfNeeded()
     }
-    
     
     override func prepareForReuse() {
         super.prepareForReuse()

@@ -5,28 +5,6 @@
 
 import UIKit
 
-struct VehicleDisplayModel: Equatable {
-    let carMakeTitle: String
-    let carMakeSubtitle: String
-    let carMakeLogo: UIImage?
-    
-    let regPlateTitle: String = "Reg Plate"
-    let regPlateValueTitle: String
-    
-    var totalPoliciesTitle: String = "Total Policies"
-    let totalPoliciesValueTitle: String
-    
-    init(vehicle: Vehicle, totalPolicies: Int) {
-        self.carMakeTitle = vehicle.make
-        self.carMakeSubtitle = "\(vehicle.color) \(vehicle.model)"
-        self.carMakeLogo = UIImage(named: "\(vehicle.make.lowercased())-logo")
-        self.regPlateValueTitle = vehicle.prettyVrm
-        
-        self.totalPoliciesValueTitle = String(totalPolicies)
-    }
-    
-}
-
 enum HomeSectionModel: Equatable {
     case active(title: String, items: [HomeSectionItem])
     case vehicles(title: String, items: [HomeSectionItem])

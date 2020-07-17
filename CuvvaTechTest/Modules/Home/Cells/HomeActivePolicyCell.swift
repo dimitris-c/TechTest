@@ -5,7 +5,7 @@
 
 import UIKit
 
-class HomeActivePolicyCell: UICollectionViewCell {
+final class HomeActivePolicyCell: UICollectionViewCell {
     static let identifier = "policy.active.cell.id"
     
     private let logoView: UIImageView = {
@@ -74,6 +74,10 @@ class HomeActivePolicyCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        self.stop()
     }
     
     override func layoutSubviews() {
@@ -154,8 +158,8 @@ class HomeActivePolicyCell: UICollectionViewCell {
         countdownView.duration = item.remainingSeconds
         countdownView.totalTime = Double(item.totalSeconds)
         
-        countdownView.onUpdate = { [policyRemaingTimeLabel] _ in
-            policyRemaingTimeLabel.text = item.formattedRemaingTimeTitle
+        countdownView.onUpdate = { [weak self] _ in
+            self?.policyRemaingTimeLabel.text = item.formattedRemaingTimeTitle
         }
         
         item.updateContent = { [weak self] effect in

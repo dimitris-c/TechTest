@@ -28,6 +28,10 @@ final class ActivePolicyDisplayModel: Equatable {
     
     private let policy: Policy
     
+    var vehicleId: String {
+        return policy.vehicle?.vrm ?? ""
+    }
+    
     var elapsedSeconds: TimeInterval {
         guard let startDate = policy.startDate else {
             return 0

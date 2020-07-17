@@ -8,6 +8,8 @@ import Foundation
 protocol Services {
     var networkingClient: Networking { get }
     var persistence: Persistence { get }
+    
+    var policyPeristence: PolicyPersistence { get }
 }
 
 final class ServicesContainer: Services {
@@ -16,4 +18,7 @@ final class ServicesContainer: Services {
     
     lazy var persistence: Persistence = PersistenceService()
     
+    lazy var policyPeristence: PolicyPersistence = {
+        return PolicyPersistenceService(persistence: persistence)
+    }()
 }

@@ -5,25 +5,28 @@
 
 import UIKit
 
-final class HomeWireframe {
+protocol HomeNavigable: class {
+    func presentVehicleProfile(with id: String)
+}
+
+final class HomeWireframe: HomeNavigable {
     
     private let networking: Networking
-    private let persistence: Persistence
+    private let persistence: PolicyPersistence
     
     private var navigationController: UINavigationController?
     
-    init(networking: Networking, persistence: Persistence) {
+    init(networking: Networking, persistence: PolicyPersistence) {
         self.networking = networking
         self.persistence = persistence
     }
     
     func prepareModule() -> UIViewController {
         
-        let policyPersistence = PolicyPersistenceService(persistence: persistence)
         let apiClient = PolicyAPIClient(networking: networking,
                                         baseUrl: PolicyAPIConfig.staging.baseUrl)
         
-        let viewModel = HomeViewModel(apiClient: apiClient, policyPersistence: policyPersistence)
+        let viewModel = HomeViewModel(apiClient: apiClient, policyPersistence: persistence, navigable: self)
         let homeController = HomeViewController(viewModel: viewModel)
         
         let navController = UINavigationController(rootViewController: homeController)
@@ -31,4 +34,13 @@ final class HomeWireframe {
         
         return navController
     }
+    
+    func presentVehicleProfile(with id: String) {
+        
+        let vehicleProfileWireframe = VehicleProfileWireframe(persistence: persistence, vehicleId: id)
+        vehicleProfileWireframe.presentWireframe(on: self.navigationController)
+        
+    }
+    
+    
 }

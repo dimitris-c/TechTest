@@ -131,6 +131,10 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 145)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.perform(action: .showvehicleProfile(indexPath))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let layout = collectionViewLayout as? UICollectionViewFlowLayout
         let left = layout?.sectionInset.left ?? 0

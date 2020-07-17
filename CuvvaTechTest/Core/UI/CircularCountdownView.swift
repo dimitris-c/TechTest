@@ -113,6 +113,11 @@ final class CircularCountdownView: UIView {
             self.doStart()
         }
     }
+    
+    deinit {
+        timer?.invalidate()
+        timer = nil
+    }
 
     func stop() {
         timer?.invalidate()

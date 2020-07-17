@@ -8,6 +8,7 @@ import Foundation
 enum HomeViewAction {
     case viewLoaded
     case reload
+    case showvehicleProfile(_ indexPath: IndexPath)
 }
 
 enum HomeViewEffect {
@@ -32,20 +33,32 @@ final class HomeViewModel: HomeViewModelType {
     private let proccessDataQueue = DispatchQueue(label: "viewmodel.process.queue", qos: .userInitiated)
     private let apiClient: PolicyAPI
     private let policyPersistence: PolicyPersistence
+    private let navigable: HomeNavigable
     
     let dataSource = HomeModelDataSource()
     
     var updateContent: ((HomeViewEffect) -> Void)?
     
-    init(apiClient: PolicyAPI, policyPersistence: PolicyPersistence) {
+    init(apiClient: PolicyAPI, policyPersistence: PolicyPersistence, navigable: HomeNavigable) {
         self.apiClient = apiClient
         self.policyPersistence = policyPersistence
+        self.navigable = navigable
     }
     
     func perform(action: HomeViewAction) {
         switch action {
             case .viewLoaded, .reload:
                 self.viewLoadedAction()
+            case .showvehicleProfile(let indexPath):
+                switch dataSource.model(at: indexPath) {
+                    case .vehicle(let item):
+                        self.navigable.presentVehicleProfile(with: item.vehicleId)
+                    case .activeItem(let item):
+                        let vehicleId = item.vehicleId
+                        self.navigable.presentVehicleProfile(with: item.vehicleId)
+                    default:
+                        break
+                }
         }
     }
     
@@ -88,7 +101,11 @@ final class HomeViewModel: HomeViewModelType {
         
         let activePoliciesModels = activePolicies.map { policy -> HomeSectionItem in
             let totalPolicies = policy.vehicle?.totalPolicies ?? 0
-            return .activeItem(item: ActivePolicyDisplayModel(policy: Policy(value: policy), totalPolicies: totalPolicies))
+            let policyCopy = Policy(value: policy)
+            if let vehicle = policyCopy.vehicle {
+                policyCopy.vehicle = Vehicle(value: vehicle)
+            }
+            return .activeItem(item: ActivePolicyDisplayModel(policy: Policy(value: policyCopy), totalPolicies: totalPolicies))
         }
         var data: [HomeSectionModel] = []
         
