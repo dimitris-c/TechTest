@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3379C2EE639958A6CD29D22B /* Pods_CuvvaTechTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395828C763E10839D1B2B2F7 /* Pods_CuvvaTechTestTests.framework */; };
+		B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */; };
 		B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E1F24BD99F000566FB4 /* Endpoint.swift */; };
 		B5C58E2224BD9A5300566FB4 /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E2124BD9A5200566FB4 /* NetworkingClient.swift */; };
 		B5C58E2424BD9AE100566FB4 /* URLSession+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58E2324BD9AE100566FB4 /* URLSession+Networking.swift */; };
@@ -46,6 +47,8 @@
 		B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */; };
 		B5C58FD624C0683B00566FB4 /* UICollectionView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */; };
 		B5C5907624C08DE400566FB4 /* UIViewController+DisplayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */; };
+		B5C5907824C09B9000566FB4 /* CircularCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5907724C09B9000566FB4 /* CircularCountdownView.swift */; };
+		B5C5907A24C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C5907924C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift */; };
 		B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2617C24BC8D5900202207 /* AppDelegate.swift */; };
 		B5F2618624BC8D5A00202207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618524BC8D5A00202207 /* Assets.xcassets */; };
 		B5F2618924BC8D5A00202207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F2618724BC8D5A00202207 /* LaunchScreen.storyboard */; };
@@ -68,6 +71,7 @@
 		8B51E6DBCE5202F3E067DE4F /* Pods-CuvvaTechTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuvvaTechTestTests.debug.xcconfig"; path = "Target Support Files/Pods-CuvvaTechTestTests/Pods-CuvvaTechTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0A6146C3694945EADD1D9A /* Pods_CuvvaTechTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuvvaTechTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCEBCD0F18F352CA4AA6AD3 /* Pods-CuvvaTechTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuvvaTechTest.release.xcconfig"; path = "Target Support Files/Pods-CuvvaTechTest/Pods-CuvvaTechTest.release.xcconfig"; sourceTree = "<group>"; };
+		B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
 		B5C58E1F24BD99F000566FB4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B5C58E2124BD9A5200566FB4 /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		B5C58E2324BD9AE100566FB4 /* URLSession+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Networking.swift"; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVehicleCell.swift; sourceTree = "<group>"; };
 		B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Convenience.swift"; sourceTree = "<group>"; };
 		B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DisplayError.swift"; sourceTree = "<group>"; };
+		B5C5907724C09B9000566FB4 /* CircularCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCountdownView.swift; sourceTree = "<group>"; };
+		B5C5907924C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponentsFormatter+Convenience.swift"; sourceTree = "<group>"; };
 		B5F2617924BC8D5900202207 /* CuvvaTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuvvaTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F2617C24BC8D5900202207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F2618524BC8D5A00202207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 				B5C58E3E24BDCDF500566FB4 /* DateFormatter+Convenience.swift */,
 				B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */,
 				B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */,
+				B5C5907924C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,6 +298,7 @@
 			children = (
 				B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */,
 				B5C58F2624BF873400566FB4 /* HomeActivePolicyCell.swift */,
+				B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */,
 				B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */,
 			);
 			path = Cells;
@@ -300,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				B5C58FC724C03C1F00566FB4 /* TitleAndSubtitleView.swift */,
+				B5C5907724C09B9000566FB4 /* CircularCountdownView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -554,13 +563,16 @@
 				B5C58E3F24BDCDF500566FB4 /* DateFormatter+Convenience.swift in Sources */,
 				B5C58E3B24BDCCE000566FB4 /* PolicyCancelled.swift in Sources */,
 				B5C58F0924BE48DA00566FB4 /* PolicyPersistence.swift in Sources */,
+				B5C5907A24C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift in Sources */,
 				B5C58FC824C03C1F00566FB4 /* TitleAndSubtitleView.swift in Sources */,
 				B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */,
 				B5C58FCA24C046A400566FB4 /* HomeCollectionViewDataSource.swift in Sources */,
 				B5C58E4724BDD4C100566FB4 /* PolicyAPIConfig.swift in Sources */,
 				B5C58F2024BF468E00566FB4 /* HomeWireframe.swift in Sources */,
 				B5C58F2724BF873400566FB4 /* HomeActivePolicyCell.swift in Sources */,
+				B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */,
 				B5C58E2D24BDA42C00566FB4 /* AppController.swift in Sources */,
+				B5C5907824C09B9000566FB4 /* CircularCountdownView.swift in Sources */,
 				B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */,
 				B5C58E3524BDCC7700566FB4 /* PolicyData.swift in Sources */,
 				B5C58E3324BDA8BF00566FB4 /* PolicyWrapper.swift in Sources */,

@@ -35,19 +35,19 @@ class Policy: Object, Codable {
 
 extension Policy {
     func isActive() -> Bool {
-        guard let startDate = self.startDate else { return false }
-        let latestExtensionPolicy = extensionPolicies.first { policy -> Bool in
-            guard policy.cancelled == nil else { return false }
-            guard let endDate = self.endDate, let policyEndDate = policy.endDate else {
+        guard let startDate = self.startDate, let endDate = self.endDate, endDate > Date() else { return false }
+        let latestExtensionPolicy = extensionPolicies.last { extPolicy -> Bool in
+            guard extPolicy.cancelled == nil else { return false }
+            guard let extPolicyEndDate = extPolicy.endDate, extPolicyEndDate > Date() else {
                 return false
             }
-            return policyEndDate > endDate
-        }
-        guard let latestExtensionPolicyEndDate = latestExtensionPolicy?.endDate ?? self.endDate else {
-            return false
+            return extPolicyEndDate > endDate
         }
         let now = Date()
-        return (startDate...latestExtensionPolicyEndDate).contains(now)
+        if let latestExtensionPolicyEndDate = latestExtensionPolicy?.endDate {
+            return (startDate...latestExtensionPolicyEndDate).contains(now)
+        }
+        return (startDate...endDate).contains(now)
     }
 }
 
@@ -64,7 +64,22 @@ class Vehicle: Object, Codable {
     @objc dynamic var variant: String? = nil
     @objc dynamic var color: String = ""
     
-    @objc dynamic var policy: Policy? = nil
+    var policies: LazyFilterSequence<Results<Policy>>? {
+        return realm?.objects(Policy.self).filter { $0.vehicle?.vrm == self.vrm }
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case vrm
+        case prettyVrm
+        case make
+        case model
+        case variant
+        case color
+    }
+    
+    var totalPolicies: Int {
+        return policies?.count ?? 0
+    }
     
     override class func primaryKey() -> String? {
         return "vrm"

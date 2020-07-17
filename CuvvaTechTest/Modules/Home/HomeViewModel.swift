@@ -78,16 +78,20 @@ final class HomeViewModel: HomeViewModelType {
     }
     
     private func convertStoredData() {
-        let vehicles = self.policyPersistence.retrieveVehicles().map { Vehicle(value: $0) }
+        let vehicles = self.policyPersistence.retrieveVehicles()
         let vehicleModels = vehicles.map { (vehicle) -> HomeSectionItem in
-            return .vehicle(item: VehicleDisplayModel(vehicle: vehicle))
+            let totalPolicies = vehicle.totalPolicies
+            return .vehicle(item: VehicleDisplayModel(vehicle: Vehicle(value: vehicle), totalPolicies: totalPolicies))
         }
         
         let activePolicies = policyPersistence.retrievePolicies().filter { $0.isActive() }
+        
         let activePoliciesModels = activePolicies.map { policy -> HomeSectionItem in
-            return .activeItem(item: ActivePolicyDisplayModel())
+            let totalPolicies = policy.vehicle?.totalPolicies ?? 0
+            return .activeItem(item: ActivePolicyDisplayModel(policy: Policy(value: policy), totalPolicies: totalPolicies))
         }
         var data: [HomeSectionModel] = []
+        
         if !activePolicies.isEmpty {
             data.append(.active(title: "Active policies", items: Array(activePoliciesModels)))
         }

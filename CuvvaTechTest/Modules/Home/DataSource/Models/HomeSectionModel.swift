@@ -5,14 +5,10 @@
 
 import UIKit
 
-struct ActivePolicyDisplayModel: Equatable {
-    
-}
-
 struct VehicleDisplayModel: Equatable {
     let carMakeTitle: String
     let carMakeSubtitle: String
-    let carMakeLogo: UIImage
+    let carMakeLogo: UIImage?
     
     let regPlateTitle: String = "Reg Plate"
     let regPlateValueTitle: String
@@ -20,18 +16,13 @@ struct VehicleDisplayModel: Equatable {
     var totalPoliciesTitle: String = "Total Policies"
     let totalPoliciesValueTitle: String
     
-    init(vehicle: Vehicle) {
+    init(vehicle: Vehicle, totalPolicies: Int) {
         self.carMakeTitle = vehicle.make
         self.carMakeSubtitle = "\(vehicle.color) \(vehicle.model)"
-        self.carMakeLogo = UIImage(named: "\(vehicle.make.lowercased())-logo") ?? UIImage()
+        self.carMakeLogo = UIImage(named: "\(vehicle.make.lowercased())-logo")
         self.regPlateValueTitle = vehicle.prettyVrm
         
-        if let policy = vehicle.policy {
-            let extensionsCount = policy.extensionPolicies.count + 1
-            self.totalPoliciesValueTitle = String(extensionsCount)
-        } else {
-            self.totalPoliciesValueTitle = "0"
-        }
+        self.totalPoliciesValueTitle = String(totalPolicies)
     }
     
 }

@@ -96,10 +96,10 @@ class HomeViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     let okAction: () -> Void = { self.viewModel.perform(action: .reload) }
                     self.showError(title: title,
-                                    message: message,
-                                    okAction: okAction,
-                                    okActionTitle: "Retry",
-                                    cancelAction: { })
+                                   message: message,
+                                   okAction: okAction,
+                                   okActionTitle: "Retry",
+                                   cancelAction: { })
             }
         }
         
@@ -146,4 +146,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             }
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if case let .activeItem(item: item) = viewModel.dataSource.model(at: indexPath) {
+            item.perform(action: .stopVisualCountdown)
+        }
+    }
+    
 }

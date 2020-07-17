@@ -26,6 +26,7 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             switch model {
                 case .activeItem(let item):
                     let cell: HomeActivePolicyCell = collectionView.dequeueReusableCell(identifier: HomeActivePolicyCell.identifier, indexPath: indexPath)
+                    cell.configure(item: item)
                     return cell
                 case .vehicle(let item):
                     let cell: HomeVehicleCell = collectionView.dequeueReusableCell(identifier: HomeVehicleCell.identifier, indexPath: indexPath)

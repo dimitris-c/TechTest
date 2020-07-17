@@ -48,6 +48,20 @@ class PolicyTests: XCTestCase {
         XCTAssertFalse(isActive)
     }
     
+    func testPolicyIsCorrectlyReturnsActiveStatusWhen_Not_Active_NoExtensions_EndDateInEarlierThanNow() throws {
+        // Given
+        let policy = Policy()
+        policy.policyId = "policy.id"
+        // When
+        // start and end date is between now
+        policy.startDate = nil
+        policy.endDate = Date(timeInterval: -20, since: Date())
+        
+        // Then
+        let isActive = policy.isActive()
+        XCTAssertFalse(isActive)
+    }
+    
     func testPolicyIsCorrectlyReturnsActiveStatusWhen_Not_Active_NoExtensions() throws {
         // Given
         let policy = Policy()

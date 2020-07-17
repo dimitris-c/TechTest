@@ -42,11 +42,12 @@ final class PolicyPersistenceService: PolicyPersistence {
         for policy in policies {
             let transactions = transactions.filter { $0.policyId == policy.policyId }
             policy.transactions.append(objectsIn: transactions)
-            let extensionPolicies = policies.filter { $0.originalPolicyId == policy.originalPolicyId && $0.isExtensionPolicy }
-            policy.extensionPolicies.append(objectsIn: extensionPolicies)
+            if !policy.isExtensionPolicy {
+                let extensionPolicies = policies.filter { $0.originalPolicyId == policy.originalPolicyId && $0.isExtensionPolicy }
+                policy.extensionPolicies.append(objectsIn: extensionPolicies)
+            }
             let cancelledPolicies = cancelled.first { $0.policyId == policy.policyId }
             policy.cancelled = cancelledPolicies
-            policy.vehicle?.policy = policy
         }
         return policies
     }
