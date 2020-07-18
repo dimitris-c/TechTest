@@ -106,7 +106,7 @@ class VehicleHeaderView: UIView {
             extendButton.topAnchor.constraint(equalTo: totalPolicies.bottomAnchor, constant: 5),
             extendButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             extendButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
-            extendButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 15)
+            extendButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 0)
         ])
         
         
