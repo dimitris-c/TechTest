@@ -40,6 +40,7 @@ final class CircularCountdownView: UIView {
     var progressLineWidth: CGFloat = 3 {
         didSet {
             progressLayer.lineWidth = progressLineWidth
+            backgroundLayer.lineWidth = progressLineWidth
             self.setNeedsDisplay()
         }
     }

@@ -5,7 +5,6 @@
 
 import UIKit
 
-
 struct VehicleDisplayModel: Equatable {
     let carMakeTitle: String
     let carMakeSubtitle: String

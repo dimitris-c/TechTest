@@ -55,7 +55,7 @@ final class ActivePolicyDisplayModel: Equatable {
     }
     
     var formattedRemaingTimeTitle: String? {
-        return DateComponentsFormatter.countdownFormatter.string(from: Double(remainingSeconds))
+        return formattedRemaingTimeTitle(displayRemainingPhrase: true)
     }
     
     var updateContent: ((ActivePolicyDisplayModelEffect) -> Void)?
@@ -75,6 +75,17 @@ final class ActivePolicyDisplayModel: Equatable {
         }
         
         totalPoliciesValueTitle = String(totalPolicies)
+    }
+    
+    convenience init(policy: Policy) {
+        self.init(policy: policy, totalPolicies: 0)
+    }
+    
+    func formattedRemaingTimeTitle(displayRemainingPhrase: Bool) -> String? {
+        if displayRemainingPhrase {
+            return DateComponentsFormatter.countdownFormatter.string(from: Double(remainingSeconds))
+        }
+        return DateComponentsFormatter.countdownFormatterNoRemainingPhrase.string(from: Double(remainingSeconds))
     }
     
     func perform(action: ActivePolicyDisplayModelAction) {

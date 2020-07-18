@@ -5,10 +5,6 @@
 
 import Foundation
 
-struct PreviousPolicyDisplayModel {
-    
-}
-
 enum VehicleProfileSectionModel {
     case activePolicies(title: String, items: [VehicleProfileSectionItem])
     case previousPolicies(title: String, items: [VehicleProfileSectionItem])

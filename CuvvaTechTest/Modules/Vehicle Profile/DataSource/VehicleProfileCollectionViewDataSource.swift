@@ -26,11 +26,11 @@ final class VehicleProfileCollectionViewDataSource: NSObject, UICollectionViewDa
             switch model {
                 case .activePolicy(let item):
                     let cell: VehicleProfileActivePolicyCell = collectionView.dequeueReusableCell(identifier: VehicleProfileActivePolicyCell.identifier, indexPath: indexPath)
-//                    cell.configure(item: item)
+                    cell.configure(item: item)
                     return cell
                 case .previousPolicy(let item):
                     let cell: VehicleProfilePolicyCell = collectionView.dequeueReusableCell(identifier: VehicleProfilePolicyCell.identifier, indexPath: indexPath)
-//                    cell.configure(item: item)
+                    cell.configure(item: item)
                     return cell
             }
         }
@@ -45,7 +45,6 @@ final class VehicleProfileCollectionViewDataSource: NSObject, UICollectionViewDa
             let view: TitleHeaderCollectionView = collectionView.dequeueSupplementaryView(identifier: TitleHeaderCollectionView.identifier, kind: kind, indexPath: indexPath)
             view.titleLabel.text = model.title
             return view
-            
         }
         
         return UICollectionReusableView()

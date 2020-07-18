@@ -31,6 +31,10 @@ class Policy: Object, Codable {
         return policyId != originalPolicyId
     }
     
+    var isVoided: Bool {
+        return cancelled != nil
+    }
+    
 }
 
 extension Policy {

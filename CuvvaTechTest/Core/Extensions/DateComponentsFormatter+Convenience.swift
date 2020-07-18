@@ -14,4 +14,14 @@ extension DateComponentsFormatter {
         formatter.allowedUnits = [.day, .hour, .minute]
         return formatter
     }()
+    
+    static let countdownFormatterNoRemainingPhrase: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.includesApproximationPhrase = false
+        formatter.includesTimeRemainingPhrase = false
+        formatter.allowedUnits = [.day, .hour, .minute]
+        return formatter
+    }()
+    
 }

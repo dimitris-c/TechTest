@@ -54,7 +54,6 @@ final class HomeViewModel: HomeViewModelType {
                     case .vehicle(let item):
                         self.navigable.presentVehicleProfile(with: item.vehicleId)
                     case .activeItem(let item):
-                        let vehicleId = item.vehicleId
                         self.navigable.presentVehicleProfile(with: item.vehicleId)
                     default:
                         break

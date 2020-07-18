@@ -13,6 +13,10 @@
 		B53324C324C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */; };
 		B53324C624C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */; };
 		B53324C824C1F489004C5FD2 /* VehicleProfilePolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C724C1F489004C5FD2 /* VehicleProfilePolicyCell.swift */; };
+		B53324CA24C33BC5004C5FD2 /* SeparatorResuableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C924C33BC5004C5FD2 /* SeparatorResuableView.swift */; };
+		B53324CC24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */; };
+		B533260E24C354E0004C5FD2 /* UIView+Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260D24C354E0004C5FD2 /* UIView+Curve.swift */; };
+		B533261024C35512004C5FD2 /* VehicleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */; };
 		B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */; };
 		B55DD6A024C1D0B00028F23C /* VehicleDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */; };
 		B55DD6A324C1DD200028F23C /* VehicleProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */; };
@@ -84,6 +88,10 @@
 		B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileActivePolicyCell.swift; sourceTree = "<group>"; };
 		B53324C724C1F489004C5FD2 /* VehicleProfilePolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfilePolicyCell.swift; sourceTree = "<group>"; };
+		B53324C924C33BC5004C5FD2 /* SeparatorResuableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorResuableView.swift; sourceTree = "<group>"; };
+		B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousPolicyDisplayModel.swift; sourceTree = "<group>"; };
+		B533260D24C354E0004C5FD2 /* UIView+Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Curve.swift"; sourceTree = "<group>"; };
+		B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleHeaderView.swift; sourceTree = "<group>"; };
 		B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 			children = (
 				B53324BD24C1CD93004C5FD2 /* VehicleProfileDataSource.swift */,
 				B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */,
+				B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 			children = (
 				B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */,
 				B53324C724C1F489004C5FD2 /* VehicleProfilePolicyCell.swift */,
+				B53324C924C33BC5004C5FD2 /* SeparatorResuableView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -207,11 +217,12 @@
 		B55DD6A124C1DD020028F23C /* Vehicle Profile */ = {
 			isa = PBXGroup;
 			children = (
-				B53324C424C1F344004C5FD2 /* Cells */,
 				B53324C024C1EF1E004C5FD2 /* VehicleProfileWireframe.swift */,
+				B53324C424C1F344004C5FD2 /* Cells */,
 				B53324BF24C1CD9E004C5FD2 /* DataSource */,
 				B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */,
 				B55DD6A424C1DD360028F23C /* VehicleProfileViewModel.swift */,
+				B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */,
 			);
 			path = "Vehicle Profile";
 			sourceTree = "<group>";
@@ -268,6 +279,7 @@
 				B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */,
 				B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */,
 				B5C5907924C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift */,
+				B533260D24C354E0004C5FD2 /* UIView+Curve.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -602,9 +614,11 @@
 				B5C58E2A24BD9F5900566FB4 /* DesignStyling.swift in Sources */,
 				B5C58E2424BD9AE100566FB4 /* URLSession+Networking.swift in Sources */,
 				B5C58E3924BDCCC400566FB4 /* PolicyTransaction.swift in Sources */,
+				B533261024C35512004C5FD2 /* VehicleHeaderView.swift in Sources */,
 				B5C58E3724BDCC8A00566FB4 /* Policy.swift in Sources */,
 				B5C58E2224BD9A5300566FB4 /* NetworkingClient.swift in Sources */,
 				B5C58E3D24BDCCFE00566FB4 /* PolicyType.swift in Sources */,
+				B533260E24C354E0004C5FD2 /* UIView+Curve.swift in Sources */,
 				B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */,
 				B53324C324C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift in Sources */,
 				B5C58FD024C04BA600566FB4 /* HomeSectionModel.swift in Sources */,
@@ -616,8 +630,10 @@
 				B5C58E3B24BDCCE000566FB4 /* PolicyCancelled.swift in Sources */,
 				B5C58F0924BE48DA00566FB4 /* PolicyPersistence.swift in Sources */,
 				B55DD6A524C1DD360028F23C /* VehicleProfileViewModel.swift in Sources */,
+				B53324CA24C33BC5004C5FD2 /* SeparatorResuableView.swift in Sources */,
 				B5C5907A24C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift in Sources */,
 				B5C58FC824C03C1F00566FB4 /* TitleAndSubtitleView.swift in Sources */,
+				B53324CC24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift in Sources */,
 				B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */,
 				B55DD6A024C1D0B00028F23C /* VehicleDisplayModel.swift in Sources */,
 				B5C58FCA24C046A400566FB4 /* HomeCollectionViewDataSource.swift in Sources */,
