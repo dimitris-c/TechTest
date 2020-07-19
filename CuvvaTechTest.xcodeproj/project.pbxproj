@@ -20,6 +20,15 @@
 		B533261624C42464004C5FD2 /* SectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261524C42464004C5FD2 /* SectionModelType.swift */; };
 		B533261924C424FF004C5FD2 /* SectionedModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */; };
 		B533261C24C429FF004C5FD2 /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261B24C429FF004C5FD2 /* HomeActiveDisplayModel.swift */; };
+		B533261F24C437C7004C5FD2 /* TranscationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261E24C437C7004C5FD2 /* TranscationViewController.swift */; };
+		B533262124C437F0004C5FD2 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533262024C437F0004C5FD2 /* TransactionViewModel.swift */; };
+		B533276C24C4890E004C5FD2 /* UIViewController+EmptyBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533276B24C4890E004C5FD2 /* UIViewController+EmptyBackButton.swift */; };
+		B533277024C492F0004C5FD2 /* TransactionSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533276F24C492F0004C5FD2 /* TransactionSectionModel.swift */; };
+		B533277224C4943F004C5FD2 /* TransactionTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533277124C4943F004C5FD2 /* TransactionTableDataSource.swift */; };
+		B533277924C49682004C5FD2 /* UITableView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533277824C49682004C5FD2 /* UITableView+Convenience.swift */; };
+		B533278024C49902004C5FD2 /* TransactionAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533277E24C49902004C5FD2 /* TransactionAmountTableViewCell.swift */; };
+		B533278124C49902004C5FD2 /* TransactionTotalAmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533277F24C49902004C5FD2 /* TransactionTotalAmountTableViewCell.swift */; };
+		B533278324C4A2F1004C5FD2 /* NumberFormatter+Covnenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533278224C4A2F1004C5FD2 /* NumberFormatter+Covnenience.swift */; };
 		B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */; };
 		B55DD6A024C1D0B00028F23C /* VehicleDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */; };
 		B55DD6A324C1DD200028F23C /* VehicleProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */; };
@@ -97,6 +106,15 @@
 		B533261524C42464004C5FD2 /* SectionModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModelType.swift; sourceTree = "<group>"; };
 		B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedModelDataSource.swift; sourceTree = "<group>"; };
 		B533261B24C429FF004C5FD2 /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
+		B533261E24C437C7004C5FD2 /* TranscationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationViewController.swift; sourceTree = "<group>"; };
+		B533262024C437F0004C5FD2 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		B533276B24C4890E004C5FD2 /* UIViewController+EmptyBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmptyBackButton.swift"; sourceTree = "<group>"; };
+		B533276F24C492F0004C5FD2 /* TransactionSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSectionModel.swift; sourceTree = "<group>"; };
+		B533277124C4943F004C5FD2 /* TransactionTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableDataSource.swift; sourceTree = "<group>"; };
+		B533277824C49682004C5FD2 /* UITableView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Convenience.swift"; sourceTree = "<group>"; };
+		B533277E24C49902004C5FD2 /* TransactionAmountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionAmountTableViewCell.swift; sourceTree = "<group>"; };
+		B533277F24C49902004C5FD2 /* TransactionTotalAmountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTotalAmountTableViewCell.swift; sourceTree = "<group>"; };
+		B533278224C4A2F1004C5FD2 /* NumberFormatter+Covnenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Covnenience.swift"; sourceTree = "<group>"; };
 		B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileViewController.swift; sourceTree = "<group>"; };
@@ -243,15 +261,53 @@
 			path = DisplayModels;
 			sourceTree = "<group>";
 		};
-		B55DD6A124C1DD020028F23C /* Vehicle Profile */ = {
+		B533261D24C4372D004C5FD2 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				B53324C024C1EF1E004C5FD2 /* VehicleProfileWireframe.swift */,
+				B533277524C4952A004C5FD2 /* Cells */,
+				B533276E24C492E0004C5FD2 /* DataSource */,
+				B533261E24C437C7004C5FD2 /* TranscationViewController.swift */,
+				B533262024C437F0004C5FD2 /* TransactionViewModel.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		B533276D24C491DD004C5FD2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
 				B53324C424C1F344004C5FD2 /* Cells */,
 				B53324BF24C1CD9E004C5FD2 /* DataSource */,
 				B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */,
 				B55DD6A424C1DD360028F23C /* VehicleProfileViewModel.swift */,
 				B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B533276E24C492E0004C5FD2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				B533276F24C492F0004C5FD2 /* TransactionSectionModel.swift */,
+				B533277124C4943F004C5FD2 /* TransactionTableDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		B533277524C4952A004C5FD2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B533277E24C49902004C5FD2 /* TransactionAmountTableViewCell.swift */,
+				B533277F24C49902004C5FD2 /* TransactionTotalAmountTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B55DD6A124C1DD020028F23C /* Vehicle Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B53324C024C1EF1E004C5FD2 /* VehicleProfileWireframe.swift */,
+				B533261D24C4372D004C5FD2 /* Transaction */,
+				B533276D24C491DD004C5FD2 /* Profile */,
 			);
 			path = "Vehicle Profile";
 			sourceTree = "<group>";
@@ -307,9 +363,12 @@
 			children = (
 				B5C58E3E24BDCDF500566FB4 /* DateFormatter+Convenience.swift */,
 				B5C58FD524C0683B00566FB4 /* UICollectionView+Convenience.swift */,
+				B533277824C49682004C5FD2 /* UITableView+Convenience.swift */,
 				B5C5907524C08DE400566FB4 /* UIViewController+DisplayError.swift */,
 				B5C5907924C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift */,
 				B533260D24C354E0004C5FD2 /* UIView+Curve.swift */,
+				B533276B24C4890E004C5FD2 /* UIViewController+EmptyBackButton.swift */,
+				B533278224C4A2F1004C5FD2 /* NumberFormatter+Covnenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -637,7 +696,10 @@
 				B5C58FD624C0683B00566FB4 /* UICollectionView+Convenience.swift in Sources */,
 				B5C58F0724BE429800566FB4 /* Pesistence.swift in Sources */,
 				B53324C624C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift in Sources */,
+				B533277024C492F0004C5FD2 /* TransactionSectionModel.swift in Sources */,
 				B5C58E2F24BDA56A00566FB4 /* ServicesContainer.swift in Sources */,
+				B533276C24C4890E004C5FD2 /* UIViewController+EmptyBackButton.swift in Sources */,
+				B533278324C4A2F1004C5FD2 /* NumberFormatter+Covnenience.swift in Sources */,
 				B5C58F1C24BF454D00566FB4 /* HomeViewController.swift in Sources */,
 				B5C58F1D24BF454D00566FB4 /* HomeViewModel.swift in Sources */,
 				B5C58E2A24BD9F5900566FB4 /* DesignStyling.swift in Sources */,
@@ -648,11 +710,15 @@
 				B5C58E2224BD9A5300566FB4 /* NetworkingClient.swift in Sources */,
 				B5C58E3D24BDCCFE00566FB4 /* PolicyType.swift in Sources */,
 				B533260E24C354E0004C5FD2 /* UIView+Curve.swift in Sources */,
+				B533261F24C437C7004C5FD2 /* TranscationViewController.swift in Sources */,
 				B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */,
 				B53324C324C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift in Sources */,
 				B533261924C424FF004C5FD2 /* SectionedModelDataSource.swift in Sources */,
+				B533262124C437F0004C5FD2 /* TransactionViewModel.swift in Sources */,
 				B5C58FD024C04BA600566FB4 /* HomeSectionModel.swift in Sources */,
 				B5C5907624C08DE400566FB4 /* UIViewController+DisplayError.swift in Sources */,
+				B533278024C49902004C5FD2 /* TransactionAmountTableViewCell.swift in Sources */,
+				B533277224C4943F004C5FD2 /* TransactionTableDataSource.swift in Sources */,
 				B55DD6A324C1DD200028F23C /* VehicleProfileViewController.swift in Sources */,
 				B5C58FD224C05EEA00566FB4 /* TitleHeaderCollectionView.swift in Sources */,
 				B5C58E4524BDD41D00566FB4 /* PolicyAPIClient.swift in Sources */,
@@ -661,6 +727,7 @@
 				B5C58F0924BE48DA00566FB4 /* PolicyPersistence.swift in Sources */,
 				B55DD6A524C1DD360028F23C /* VehicleProfileViewModel.swift in Sources */,
 				B5C5907A24C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift in Sources */,
+				B533277924C49682004C5FD2 /* UITableView+Convenience.swift in Sources */,
 				B5C58FC824C03C1F00566FB4 /* TitleAndSubtitleView.swift in Sources */,
 				B53324CC24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift in Sources */,
 				B5F2617D24BC8D5900202207 /* AppDelegate.swift in Sources */,
@@ -676,6 +743,7 @@
 				B533261624C42464004C5FD2 /* SectionModelType.swift in Sources */,
 				B5C5907824C09B9000566FB4 /* CircularCountdownView.swift in Sources */,
 				B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */,
+				B533278124C49902004C5FD2 /* TransactionTotalAmountTableViewCell.swift in Sources */,
 				B5C58E3524BDCC7700566FB4 /* PolicyData.swift in Sources */,
 				B5C58E3324BDA8BF00566FB4 /* PolicyWrapper.swift in Sources */,
 			);

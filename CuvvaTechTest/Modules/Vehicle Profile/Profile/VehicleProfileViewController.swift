@@ -38,9 +38,11 @@ class VehicleProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = DesignStyling.Colours.white
         self.view.backgroundColor = DesignStyling.Colours.viewsBackground
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "close-icon"), style: .plain, target: self, action: #selector(dismissController))
         self.navigationItem.leftBarButtonItem?.tintColor = .white
+        self.setBackBarItemEmpty()
         
         self.setupUI()
         self.bindViewModel()
@@ -136,6 +138,14 @@ extension VehicleProfileViewController: UICollectionViewDelegateFlowLayout {
         }
         return CGSize(width: width, height: 145)
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if case let .previousPolicy(item) = self.viewModel.dataSource.model(at: indexPath) {
+            viewModel.perform(action: .showReceipt(policyId: item.policyId))
+        }
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInset(for: section)

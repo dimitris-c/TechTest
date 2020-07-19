@@ -6,7 +6,7 @@
 import UIKit
 
 protocol VehicleProfileNavigable {
-    func showReceipt()
+    func showReceipt(policyId: String)
     func closeVehicleProfile()
 }
 
@@ -15,6 +15,7 @@ final class VehicleProfileWireframe: VehicleProfileNavigable {
     private let persistence: PolicyPersistence
     private let vehicleId: String
     
+    private var navigationControler: UINavigationController?
     private var presentingController: UINavigationController?
     
     init(persistence: PolicyPersistence, vehicleId: String) {
@@ -29,16 +30,22 @@ final class VehicleProfileWireframe: VehicleProfileNavigable {
         let navController = UINavigationController(rootViewController: viewController)
         navController.modalPresentationStyle = .fullScreen
         
+        self.navigationControler = navController
         self.presentingController = presentingController
         presentingController?.present(navController, animated: true, completion: nil)
         
     }
     
-    func showReceipt() {
-        // TODO:
+    func showReceipt(policyId: String) {
+        let viewModel = TransactionViewModel(policyPersistence: persistence, policyId: policyId)
+        let viewController = TransactionViewController(viewModel: viewModel)
+        
+        self.navigationControler?.pushViewController(viewController, animated: true)
     }
     
     func closeVehicleProfile() {
-        self.presentingController?.dismiss(animated: true, completion: nil)
+        self.presentingController?.dismiss(animated: true, completion: { [weak self] in
+            self?.navigationControler = nil
+        })
     }
 }

@@ -9,8 +9,10 @@ struct PreviousPolicyDisplayModel: Equatable {
     let durationTitle: NSAttributedString
     let endDateTitle: String
     
+    let policyId: String
+    
     init(policy: Policy) {
-        
+        self.policyId = policy.policyId
         if let startDate = policy.startDate, let endDate = policy.endDate, !policy.isVoided {
             let duration = DateComponentsFormatter.countdownFormatterNoRemainingPhrase.string(from: startDate, to: endDate) ?? ""
             let attributedString = NSAttributedString(string: duration, attributes: [

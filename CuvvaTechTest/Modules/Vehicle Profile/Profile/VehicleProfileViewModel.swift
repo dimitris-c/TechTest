@@ -8,6 +8,7 @@ import Foundation
 enum VehicleProfileViewAction {
     case viewLoaded
     case close
+    case showReceipt(policyId: String)
 }
 
 enum VehicleProfileViewEffect {
@@ -54,6 +55,8 @@ final class VehicleProfileViewModel: VehicleProfileViewModelType {
                 viewLoadedAction()
             case .close:
                 navigable.closeVehicleProfile()
+            case .showReceipt(let id):
+                navigable.showReceipt(policyId: id)
         }
     }
     
