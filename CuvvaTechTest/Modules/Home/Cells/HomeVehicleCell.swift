@@ -77,11 +77,6 @@ final class HomeVehicleCell: UICollectionViewCell {
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 8
         
-        extendButton.setTitle("Insure", for: .normal)
-        extendButton.setTitleColor(DesignStyling.Colours.secondaryCTA, for: .normal)
-        extendButton.setTitleColor(DesignStyling.Colours.darkIndigo, for: .highlighted)
-        extendButton.titleLabel?.font = DesignStyling.Fonts.title
-        extendButton.backgroundColor = DesignStyling.Colours.viewsBackground
         extendButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 20, bottom: 8, right: 20)
         extendButton.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(extendButton)
@@ -124,6 +119,10 @@ final class HomeVehicleCell: UICollectionViewCell {
         self.logoView.image = item.carMakeLogo
         self.regPlateView.update(title: item.regPlateTitle, subtitle: item.regPlateValueTitle)
         self.totalPolicies.update(title: item.totalPoliciesTitle, subtitle: item.totalPoliciesValueTitle)
+        
+        self.extendButton.backgroundColor = item.buttonBackgroundColor
+        self.extendButton.setAttributedTitle(item.buttonAttributedTitleForNormalState, for: .normal)
+        self.extendButton.setAttributedTitle(item.buttonAttributedTitleForHighlightedState, for: .highlighted)
         
         self.layoutIfNeeded()
     }

@@ -59,11 +59,6 @@ class VehicleHeaderView: UIView {
     private let extendButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Extend cover", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(DesignStyling.Colours.titleDarkBlue, for: .highlighted)
-        button.titleLabel?.font = DesignStyling.Fonts.title
-        button.backgroundColor = DesignStyling.Colours.primaryCTA
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         button.layer.cornerRadius = 8
         return button
@@ -128,6 +123,10 @@ class VehicleHeaderView: UIView {
         self.carMakeAndRegView.update(title: item.carMakeTitle, subtitle: item.regPlateValueTitle)
         self.carLogoView.image = item.carMakeLogo
         self.totalPolicies.update(title: item.totalPoliciesTitle, subtitle: item.totalPoliciesValueTitle)
+        
+        self.extendButton.backgroundColor = item.buttonBackgroundColor
+        self.extendButton.setAttributedTitle(item.buttonAttributedTitleForNormalState, for: .normal)
+        self.extendButton.setAttributedTitle(item.buttonAttributedTitleForHighlightedState, for: .highlighted)
         
         layoutIfNeeded()
     }

@@ -72,6 +72,13 @@ class Vehicle: Object, Codable {
         return realm?.objects(Policy.self).filter { $0.vehicle?.vrm == self.vrm }
     }
     
+    var activePolicy: Policy? {
+        policies?.last { $0.isActive() }
+    }
+    var hasActivePolicy: Bool {
+        activePolicy != nil
+    }
+    
     enum CodingKeys: String, CodingKey {
         case vrm
         case prettyVrm
