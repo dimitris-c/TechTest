@@ -257,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				B533261424C42454004C5FD2 /* DataSource */,
-				B5C58FC624C03C0C00566FB4 /* UI */,
 				B5C58E2E24BDA56A00566FB4 /* ServicesContainer.swift */,
 				B50061A724BC9A9F009264DF /* Networking */,
 				B5C58E3124BDA88400566FB4 /* Models */,
@@ -271,6 +270,7 @@
 		B5C58E2B24BDA30A00566FB4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B5C58FC624C03C0C00566FB4 /* Views */,
 				B5C58E4324BDD40B00566FB4 /* Services */,
 				B5C58F1E24BF455600566FB4 /* Home */,
 				B55DD6A124C1DD020028F23C /* Vehicle Profile */,
@@ -375,7 +375,6 @@
 		B5C58F2324BF870500566FB4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */,
 				B5C58F2624BF873400566FB4 /* HomeActivePolicyCell.swift */,
 				B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */,
 				B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */,
@@ -384,13 +383,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		B5C58FC624C03C0C00566FB4 /* UI */ = {
+		B5C58FC624C03C0C00566FB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */,
 				B5C58FC724C03C1F00566FB4 /* TitleAndSubtitleView.swift */,
 				B5C5907724C09B9000566FB4 /* CircularCountdownView.swift */,
 			);
-			path = UI;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B5C58FCB24C0470A00566FB4 /* DataSource */ = {
