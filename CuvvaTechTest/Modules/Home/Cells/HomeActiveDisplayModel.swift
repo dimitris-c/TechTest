@@ -31,7 +31,7 @@ final class ActivePolicyDisplayModel: Equatable {
     var vehicleId: String {
         return policy.vehicle?.vrm ?? ""
     }
-    
+     
     var elapsedSeconds: TimeInterval {
         guard let startDate = policy.startDate else {
             return 0
@@ -82,10 +82,12 @@ final class ActivePolicyDisplayModel: Equatable {
     }
     
     func formattedRemaingTimeTitle(displayRemainingPhrase: Bool) -> String? {
+        /// rounded is used to help the DateComponentsFormatter that displays no seconds
+        let seconds = Double(remainingSeconds.rounded())
         if displayRemainingPhrase {
-            return DateComponentsFormatter.countdownFormatter.string(from: Double(remainingSeconds))
+            return DateComponentsFormatter.countdownFormatter.string(from: seconds)
         }
-        return DateComponentsFormatter.countdownFormatterNoRemainingPhrase.string(from: Double(remainingSeconds))
+        return DateComponentsFormatter.countdownFormatterNoRemainingPhrase.string(from: seconds)
     }
     
     func perform(action: ActivePolicyDisplayModelAction) {

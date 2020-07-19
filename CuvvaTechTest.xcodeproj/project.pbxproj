@@ -19,6 +19,7 @@
 		B533261324C4173A004C5FD2 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */; };
 		B533261624C42464004C5FD2 /* SectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261524C42464004C5FD2 /* SectionModelType.swift */; };
 		B533261924C424FF004C5FD2 /* SectionedModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */; };
+		B533261C24C429FF004C5FD2 /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261B24C429FF004C5FD2 /* HomeActiveDisplayModel.swift */; };
 		B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */; };
 		B55DD6A024C1D0B00028F23C /* VehicleDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */; };
 		B55DD6A324C1DD200028F23C /* VehicleProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */; };
@@ -95,6 +96,7 @@
 		B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		B533261524C42464004C5FD2 /* SectionModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModelType.swift; sourceTree = "<group>"; };
 		B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedModelDataSource.swift; sourceTree = "<group>"; };
+		B533261B24C429FF004C5FD2 /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		B533261124C4171C004C5FD2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B533261A24C429EE004C5FD2 /* DisplayModels */,
 				B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */,
 			);
 			path = Home;
@@ -230,6 +233,14 @@
 				B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		B533261A24C429EE004C5FD2 /* DisplayModels */ = {
+			isa = PBXGroup;
+			children = (
+				B533261B24C429FF004C5FD2 /* HomeActiveDisplayModel.swift */,
+			);
+			path = DisplayModels;
 			sourceTree = "<group>";
 		};
 		B55DD6A124C1DD020028F23C /* Vehicle Profile */ = {
@@ -675,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C58F0D24BEEEDF00566FB4 /* PersistenceTests.swift in Sources */,
+				B533261C24C429FF004C5FD2 /* HomeActiveDisplayModel.swift in Sources */,
 				B5C58F0F24BEF43E00566FB4 /* PolicyPersistenceTests.swift in Sources */,
 				B5C58E4D24BDDAF300566FB4 /* SamplePolicyJson.swift in Sources */,
 				B5C58F1324BEF4F400566FB4 /* PolicyMockData.swift in Sources */,
