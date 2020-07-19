@@ -19,6 +19,9 @@ class TransactionViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var voidedBannerLabel = UILabel()
+    private lazy var voidedBanner = UIView()
+    
     private let tableViewDataSource: TransactionTableDataSource
     
     init(viewModel: TransactionViewModelType) {
@@ -48,8 +51,38 @@ class TransactionViewController: UIViewController {
         tableView.dataSource = tableViewDataSource
         view.addSubview(tableView)
         
+        voidedBanner.translatesAutoresizingMaskIntoConstraints = false
+        voidedBanner.backgroundColor = DesignStyling.Colours.alert
+        voidedBannerLabel.text = "This policy has been voided"
+        voidedBannerLabel.textColor = DesignStyling.Colours.white
+        voidedBannerLabel.translatesAutoresizingMaskIntoConstraints = false
+        voidedBannerLabel.numberOfLines = 1
+        voidedBannerLabel.font = DesignStyling.Fonts.headerTitle
+        voidedBannerLabel.textAlignment = .center
+        
+        voidedBanner.addSubview(voidedBannerLabel)
+        voidedBanner.isHidden = true
+        view.addSubview(voidedBanner)
+        
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            voidedBannerLabel.topAnchor.constraint(equalTo: voidedBanner.topAnchor, constant: 4),
+            voidedBannerLabel.leadingAnchor.constraint(equalTo: voidedBanner.leadingAnchor, constant: 4),
+            voidedBannerLabel.bottomAnchor.constraint(equalTo: voidedBanner.bottomAnchor, constant: -4),
+            voidedBannerLabel.trailingAnchor.constraint(equalTo: voidedBanner.trailingAnchor, constant: -4),
+        ])
+        
+        let tableViewTopConstraint = tableView.topAnchor.constraint(equalTo: view.topAnchor)
+        tableViewTopConstraint.priority = .defaultHigh
+        
+        let tableViewTopToVoidedBanner = tableView.topAnchor.constraint(greaterThanOrEqualTo: voidedBanner.bottomAnchor)
+        tableViewTopToVoidedBanner.priority = .defaultLow
+        
+        NSLayoutConstraint.activate([
+            voidedBanner.topAnchor.constraint(equalTo: view.topAnchor),
+            voidedBanner.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            voidedBanner.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableViewTopToVoidedBanner,
+            tableViewTopConstraint,
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -63,7 +96,8 @@ class TransactionViewController: UIViewController {
             switch effect {
                 case .loading:
                 break
-                case .loaded:
+                case .loaded(let isVoided):
+                    self.voidedBanner.isHidden = !isVoided
                     self.tableView.reloadData()
                 case .error(let title, let message):
                     let okAction: () -> Void = { self.viewModel.perform(action: .back) }

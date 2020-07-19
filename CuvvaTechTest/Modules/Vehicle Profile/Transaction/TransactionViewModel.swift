@@ -15,7 +15,7 @@ enum TransactionViewAction {
 
 enum TransactionViewEffect {
     case loading
-    case loaded
+    case loaded(isVoided: Bool)
     case error(title: String, message: String)
 }
 
@@ -59,15 +59,14 @@ final class TransactionViewModel: TransactionViewModelType {
     
     private func viewLoadedAction() {
         
-        guard let transactions = self.persistence.retrievePolicies()
-            .first(where: { $0.policyId == policyId })?
-            .transactions else {
-                updateContent?(.error(title: "Content Error", message: "Couldn't find transactions"))
+        guard let policy = self.persistence.retrievePolicies()
+            .first(where: { $0.policyId == policyId }) else {
+                updateContent?(.error(title: "Content Error", message: "Couldn't find policy"))
                 return
         }
         
         var section: [TransactionSectionModel] = []
-        for transaction in transactions {
+        for transaction in policy.transactions {
             var items: [TransactionSectionItem] = []
             if let pricing = transaction.pricing {
                 let ipt = TransactionDisplayItem(title: "Insurance premium tax", amount: pricing.ipt)
@@ -86,6 +85,6 @@ final class TransactionViewModel: TransactionViewModelType {
         }
         
         dataSource.update(data: section)
-        updateContent?(.loaded)
+        updateContent?(.loaded(isVoided: policy.isVoided))
     }
 }
