@@ -13,7 +13,6 @@
 		B53324C324C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */; };
 		B53324C624C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */; };
 		B53324C824C1F489004C5FD2 /* VehicleProfilePolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C724C1F489004C5FD2 /* VehicleProfilePolicyCell.swift */; };
-		B53324CA24C33BC5004C5FD2 /* SeparatorResuableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C924C33BC5004C5FD2 /* SeparatorResuableView.swift */; };
 		B53324CC24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */; };
 		B533260E24C354E0004C5FD2 /* UIView+Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260D24C354E0004C5FD2 /* UIView+Curve.swift */; };
 		B533261024C35512004C5FD2 /* VehicleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */; };
@@ -90,7 +89,6 @@
 		B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileActivePolicyCell.swift; sourceTree = "<group>"; };
 		B53324C724C1F489004C5FD2 /* VehicleProfilePolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfilePolicyCell.swift; sourceTree = "<group>"; };
-		B53324C924C33BC5004C5FD2 /* SeparatorResuableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorResuableView.swift; sourceTree = "<group>"; };
 		B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousPolicyDisplayModel.swift; sourceTree = "<group>"; };
 		B533260D24C354E0004C5FD2 /* UIView+Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Curve.swift"; sourceTree = "<group>"; };
 		B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleHeaderView.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			children = (
 				B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */,
 				B53324C724C1F489004C5FD2 /* VehicleProfilePolicyCell.swift */,
-				B53324C924C33BC5004C5FD2 /* SeparatorResuableView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -652,7 +649,6 @@
 				B5C58E3B24BDCCE000566FB4 /* PolicyCancelled.swift in Sources */,
 				B5C58F0924BE48DA00566FB4 /* PolicyPersistence.swift in Sources */,
 				B55DD6A524C1DD360028F23C /* VehicleProfileViewModel.swift in Sources */,
-				B53324CA24C33BC5004C5FD2 /* SeparatorResuableView.swift in Sources */,
 				B5C5907A24C09E7100566FB4 /* DateComponentsFormatter+Convenience.swift in Sources */,
 				B5C58FC824C03C1F00566FB4 /* TitleAndSubtitleView.swift in Sources */,
 				B53324CC24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift in Sources */,
