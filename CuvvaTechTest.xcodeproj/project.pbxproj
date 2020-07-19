@@ -17,6 +17,7 @@
 		B53324CC24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */; };
 		B533260E24C354E0004C5FD2 /* UIView+Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260D24C354E0004C5FD2 /* UIView+Curve.swift */; };
 		B533261024C35512004C5FD2 /* VehicleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */; };
+		B533261324C4173A004C5FD2 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */; };
 		B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */; };
 		B55DD6A024C1D0B00028F23C /* VehicleDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */; };
 		B55DD6A324C1DD200028F23C /* VehicleProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */; };
@@ -92,6 +93,7 @@
 		B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousPolicyDisplayModel.swift; sourceTree = "<group>"; };
 		B533260D24C354E0004C5FD2 /* UIView+Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Curve.swift"; sourceTree = "<group>"; };
 		B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleHeaderView.swift; sourceTree = "<group>"; };
+		B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		B533261124C4171C004C5FD2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		B55DD6A124C1DD020028F23C /* Vehicle Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +307,7 @@
 		B5C58E4824BDD9DA00566FB4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B533261124C4171C004C5FD2 /* Home */,
 				B5C58F1024BEF4D100566FB4 /* Mocks */,
 				B5C58E4924BDD9E100566FB4 /* Services */,
 			);
@@ -660,6 +671,7 @@
 				B5C58E4D24BDDAF300566FB4 /* SamplePolicyJson.swift in Sources */,
 				B5C58F1324BEF4F400566FB4 /* PolicyMockData.swift in Sources */,
 				B5C58E5024BDE06C00566FB4 /* PolicyDataTests.swift in Sources */,
+				B533261324C4173A004C5FD2 /* HomeViewModelTests.swift in Sources */,
 				B5C58E2724BD9C2000566FB4 /* NetworkingClientsTests.swift in Sources */,
 				B5C58E4B24BDD9F100566FB4 /* PolicyAPIClientTests.swift in Sources */,
 				B5C58F1524BF0B1C00566FB4 /* PolicyTests.swift in Sources */,
