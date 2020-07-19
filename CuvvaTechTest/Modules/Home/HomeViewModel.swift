@@ -18,7 +18,7 @@ enum HomeViewEffect {
 }
 
 protocol HomeViewModelType {
-    var dataSource: HomeModelDataSource { get }
+    var dataSource: SectionedModelDataSource<HomeSectionModel> { get }
     
     // Inputs
     func perform(action: HomeViewAction)
@@ -29,13 +29,13 @@ protocol HomeViewModelType {
 }
 
 final class HomeViewModel: HomeViewModelType {
-    
+
     private let proccessDataQueue = DispatchQueue(label: "viewmodel.process.queue", qos: .userInitiated)
     private let apiClient: PolicyAPI
     private let policyPersistence: PolicyPersistence
     private let navigable: HomeNavigable
     
-    let dataSource = HomeModelDataSource()
+    let dataSource = SectionedModelDataSource<HomeSectionModel>()
     
     var updateContent: ((HomeViewEffect) -> Void)?
     

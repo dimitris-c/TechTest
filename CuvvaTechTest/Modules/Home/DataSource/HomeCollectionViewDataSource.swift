@@ -7,9 +7,9 @@ import UIKit
 
 final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    private let dataSource: HomeModelDataSource
+    private let dataSource: SectionedModelDataSource<HomeSectionModel>
     
-    init(dataSource: HomeModelDataSource) {
+    init(dataSource: SectionedModelDataSource<HomeSectionModel>) {
         self.dataSource = dataSource
     }
     

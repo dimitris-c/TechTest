@@ -17,7 +17,7 @@ enum VehicleProfileViewEffect {
 }
 
 protocol VehicleProfileViewModelType {
-    var dataSource: VehicleProfileModelDataSource { get }
+    var dataSource: SectionedModelDataSource<VehicleProfileSectionModel> { get }
     
     // Inputs
     func perform(action: VehicleProfileViewAction)
@@ -29,7 +29,7 @@ protocol VehicleProfileViewModelType {
 }
 
 final class VehicleProfileViewModel: VehicleProfileViewModelType {
-    let dataSource = VehicleProfileModelDataSource()
+    let dataSource = SectionedModelDataSource<VehicleProfileSectionModel>()
     
     private let vehicleId: String
     private let policyPersistence: PolicyPersistence

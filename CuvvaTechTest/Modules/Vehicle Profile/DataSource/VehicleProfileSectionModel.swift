@@ -5,17 +5,17 @@
 
 import Foundation
 
-enum VehicleProfileSectionModel {
+enum VehicleProfileSectionModel: Equatable {
     case activePolicies(title: String, items: [VehicleProfileSectionItem])
     case previousPolicies(title: String, items: [VehicleProfileSectionItem])
 }
 
-enum VehicleProfileSectionItem {
+enum VehicleProfileSectionItem: Equatable {
     case activePolicy(item: ActivePolicyDisplayModel)
     case previousPolicy(item: PreviousPolicyDisplayModel)
 }
 
-extension VehicleProfileSectionModel {
+extension VehicleProfileSectionModel: SectionModelType {
     var items: [VehicleProfileSectionItem] {
         switch self {
             case .activePolicies(_, let items):
@@ -33,32 +33,13 @@ extension VehicleProfileSectionModel {
                 return title
         }
     }
-}
-
-
-final class VehicleProfileModelDataSource {
     
-    private(set) var data: [VehicleProfileSectionModel] = []
-    
-    func sectionModel(at index: Int) -> VehicleProfileSectionModel? {
-        return data[index]
+    init(section: VehicleProfileSectionModel, items: [VehicleProfileSectionItem]) {
+        switch section {
+            case .activePolicies(let title, _):
+                self = .activePolicies(title: title, items: items)
+            case .previousPolicies(let title, _):
+                self = .previousPolicies(title: title, items: items)
+        }
     }
-    
-    func model(at indexPath: IndexPath) -> VehicleProfileSectionItem? {
-        return data[indexPath.section].items[indexPath.row]
-    }
-    
-    func numberOfSections() -> Int {
-        return data.count
-    }
-    
-    func numberOfItems(for section: Int) -> Int {
-        guard let sectionModel = sectionModel(at: section) else { return 0 }
-        return sectionModel.items.count
-    }
-    
-    func update(data: [VehicleProfileSectionModel]) {
-        self.data = data
-    }
-    
 }

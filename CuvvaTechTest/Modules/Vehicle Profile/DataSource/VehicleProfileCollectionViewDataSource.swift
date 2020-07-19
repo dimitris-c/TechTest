@@ -7,9 +7,9 @@ import UIKit
 
 final class VehicleProfileCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    private let dataSource: VehicleProfileModelDataSource
+    private let dataSource: SectionedModelDataSource<VehicleProfileSectionModel>
     
-    init(dataSource: VehicleProfileModelDataSource) {
+    init(dataSource: SectionedModelDataSource<VehicleProfileSectionModel>) {
         self.dataSource = dataSource
     }
     

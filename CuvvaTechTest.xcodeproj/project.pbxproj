@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3379C2EE639958A6CD29D22B /* Pods_CuvvaTechTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395828C763E10839D1B2B2F7 /* Pods_CuvvaTechTestTests.framework */; };
-		B53324BE24C1CD93004C5FD2 /* VehicleProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324BD24C1CD93004C5FD2 /* VehicleProfileDataSource.swift */; };
+		B53324BE24C1CD93004C5FD2 /* VehicleProfileSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324BD24C1CD93004C5FD2 /* VehicleProfileSectionModel.swift */; };
 		B53324C124C1EF1E004C5FD2 /* VehicleProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C024C1EF1E004C5FD2 /* VehicleProfileWireframe.swift */; };
 		B53324C324C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */; };
 		B53324C624C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */; };
@@ -18,6 +18,8 @@
 		B533260E24C354E0004C5FD2 /* UIView+Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260D24C354E0004C5FD2 /* UIView+Curve.swift */; };
 		B533261024C35512004C5FD2 /* VehicleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */; };
 		B533261324C4173A004C5FD2 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */; };
+		B533261624C42464004C5FD2 /* SectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261524C42464004C5FD2 /* SectionModelType.swift */; };
+		B533261924C424FF004C5FD2 /* SectionedModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */; };
 		B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */; };
 		B55DD6A024C1D0B00028F23C /* VehicleDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */; };
 		B55DD6A324C1DD200028F23C /* VehicleProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */; };
@@ -54,7 +56,6 @@
 		B5C58F2724BF873400566FB4 /* HomeActivePolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58F2624BF873400566FB4 /* HomeActivePolicyCell.swift */; };
 		B5C58FC824C03C1F00566FB4 /* TitleAndSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FC724C03C1F00566FB4 /* TitleAndSubtitleView.swift */; };
 		B5C58FCA24C046A400566FB4 /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */; };
-		B5C58FCD24C049F700566FB4 /* HomeModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FCC24C049F700566FB4 /* HomeModelDataSource.swift */; };
 		B5C58FD024C04BA600566FB4 /* HomeSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FCF24C04BA600566FB4 /* HomeSectionModel.swift */; };
 		B5C58FD224C05EEA00566FB4 /* TitleHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */; };
 		B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */; };
@@ -84,7 +85,7 @@
 		8B51E6DBCE5202F3E067DE4F /* Pods-CuvvaTechTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuvvaTechTestTests.debug.xcconfig"; path = "Target Support Files/Pods-CuvvaTechTestTests/Pods-CuvvaTechTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0A6146C3694945EADD1D9A /* Pods_CuvvaTechTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuvvaTechTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCEBCD0F18F352CA4AA6AD3 /* Pods-CuvvaTechTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuvvaTechTest.release.xcconfig"; path = "Target Support Files/Pods-CuvvaTechTest/Pods-CuvvaTechTest.release.xcconfig"; sourceTree = "<group>"; };
-		B53324BD24C1CD93004C5FD2 /* VehicleProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileDataSource.swift; sourceTree = "<group>"; };
+		B53324BD24C1CD93004C5FD2 /* VehicleProfileSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileSectionModel.swift; sourceTree = "<group>"; };
 		B53324C024C1EF1E004C5FD2 /* VehicleProfileWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileWireframe.swift; sourceTree = "<group>"; };
 		B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		B53324C524C1F36A004C5FD2 /* VehicleProfileActivePolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileActivePolicyCell.swift; sourceTree = "<group>"; };
@@ -94,6 +95,8 @@
 		B533260D24C354E0004C5FD2 /* UIView+Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Curve.swift"; sourceTree = "<group>"; };
 		B533260F24C35512004C5FD2 /* VehicleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleHeaderView.swift; sourceTree = "<group>"; };
 		B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		B533261524C42464004C5FD2 /* SectionModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModelType.swift; sourceTree = "<group>"; };
+		B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedModelDataSource.swift; sourceTree = "<group>"; };
 		B55DD69D24C1BE110028F23C /* HomeActiveDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActiveDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD69F24C1D0B00028F23C /* VehicleDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDisplayModel.swift; sourceTree = "<group>"; };
 		B55DD6A224C1DD200028F23C /* VehicleProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +132,6 @@
 		B5C58F2624BF873400566FB4 /* HomeActivePolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActivePolicyCell.swift; sourceTree = "<group>"; };
 		B5C58FC724C03C1F00566FB4 /* TitleAndSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndSubtitleView.swift; sourceTree = "<group>"; };
 		B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		B5C58FCC24C049F700566FB4 /* HomeModelDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelDataSource.swift; sourceTree = "<group>"; };
 		B5C58FCF24C04BA600566FB4 /* HomeSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionModel.swift; sourceTree = "<group>"; };
 		B5C58FD124C05EEA00566FB4 /* TitleHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionView.swift; sourceTree = "<group>"; };
 		B5C58FD324C065E800566FB4 /* HomeVehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVehicleCell.swift; sourceTree = "<group>"; };
@@ -199,7 +201,7 @@
 		B53324BF24C1CD9E004C5FD2 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				B53324BD24C1CD93004C5FD2 /* VehicleProfileDataSource.swift */,
+				B53324BD24C1CD93004C5FD2 /* VehicleProfileSectionModel.swift */,
 				B53324C224C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift */,
 				B53324CB24C34922004C5FD2 /* PreviousPolicyDisplayModel.swift */,
 			);
@@ -222,6 +224,15 @@
 				B533261224C4173A004C5FD2 /* HomeViewModelTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B533261424C42454004C5FD2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				B533261524C42464004C5FD2 /* SectionModelType.swift */,
+				B533261724C42481004C5FD2 /* SectionedModelDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		B55DD6A124C1DD020028F23C /* Vehicle Profile */ = {
@@ -248,6 +259,7 @@
 		B5C58E2824BD9F4900566FB4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B533261424C42454004C5FD2 /* DataSource */,
 				B5C58FC624C03C0C00566FB4 /* UI */,
 				B5C58E2E24BDA56A00566FB4 /* ServicesContainer.swift */,
 				B50061A724BC9A9F009264DF /* Networking */,
@@ -389,7 +401,6 @@
 			children = (
 				B5C58FCE24C04B9700566FB4 /* Models */,
 				B5C58FC924C046A400566FB4 /* HomeCollectionViewDataSource.swift */,
-				B5C58FCC24C049F700566FB4 /* HomeModelDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -614,7 +625,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C58FCD24C049F700566FB4 /* HomeModelDataSource.swift in Sources */,
 				B53324C124C1EF1E004C5FD2 /* VehicleProfileWireframe.swift in Sources */,
 				B5C58FD624C0683B00566FB4 /* UICollectionView+Convenience.swift in Sources */,
 				B5C58F0724BE429800566FB4 /* Pesistence.swift in Sources */,
@@ -632,6 +642,7 @@
 				B533260E24C354E0004C5FD2 /* UIView+Curve.swift in Sources */,
 				B5C58E2024BD99F000566FB4 /* Endpoint.swift in Sources */,
 				B53324C324C1F251004C5FD2 /* VehicleProfileCollectionViewDataSource.swift in Sources */,
+				B533261924C424FF004C5FD2 /* SectionedModelDataSource.swift in Sources */,
 				B5C58FD024C04BA600566FB4 /* HomeSectionModel.swift in Sources */,
 				B5C5907624C08DE400566FB4 /* UIViewController+DisplayError.swift in Sources */,
 				B55DD6A324C1DD200028F23C /* VehicleProfileViewController.swift in Sources */,
@@ -651,10 +662,11 @@
 				B5C58E4724BDD4C100566FB4 /* PolicyAPIConfig.swift in Sources */,
 				B5C58F2024BF468E00566FB4 /* HomeWireframe.swift in Sources */,
 				B5C58F2724BF873400566FB4 /* HomeActivePolicyCell.swift in Sources */,
-				B53324BE24C1CD93004C5FD2 /* VehicleProfileDataSource.swift in Sources */,
+				B53324BE24C1CD93004C5FD2 /* VehicleProfileSectionModel.swift in Sources */,
 				B55DD69E24C1BE110028F23C /* HomeActiveDisplayModel.swift in Sources */,
 				B53324C824C1F489004C5FD2 /* VehicleProfilePolicyCell.swift in Sources */,
 				B5C58E2D24BDA42C00566FB4 /* AppController.swift in Sources */,
+				B533261624C42464004C5FD2 /* SectionModelType.swift in Sources */,
 				B5C5907824C09B9000566FB4 /* CircularCountdownView.swift in Sources */,
 				B5C58FD424C065E800566FB4 /* HomeVehicleCell.swift in Sources */,
 				B5C58E3524BDCC7700566FB4 /* PolicyData.swift in Sources */,

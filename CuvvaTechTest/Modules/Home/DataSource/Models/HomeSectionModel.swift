@@ -10,7 +10,9 @@ enum HomeSectionModel: Equatable {
     case vehicles(title: String, items: [HomeSectionItem])
 }
 
-extension HomeSectionModel {
+extension HomeSectionModel: SectionModelType {
+    typealias Item = HomeSectionItem
+    
     var items: [HomeSectionItem] {
         switch self {
             case .active(_, let items):
@@ -26,6 +28,15 @@ extension HomeSectionModel {
                 return title
             case .vehicles(let title, _):
                 return title
+        }
+    }
+    
+    init(section: HomeSectionModel, items: [HomeSectionItem]) {
+        switch section {
+            case .active(let title, _):
+                self = .active(title: title, items: items)
+            case .vehicles(let title, _):
+                self = .vehicles(title: title, items: items)
         }
     }
 }

@@ -1,19 +1,18 @@
 //
-//  Created by Dimitrios Chatzieleftheriou on 16/07/2020.
+//  Created by Dimitrios Chatzieleftheriou on 19/07/2020.
 //  Copyright © 2020 Dimitrios Chatzieleftheriou. All rights reserved.
 //
 
 import Foundation
 
-final class HomeModelDataSource {
+class SectionedModelDataSource<Section: SectionModelType> {
+    private(set) var data: [Section] = []
     
-    private(set) var data: [HomeSectionModel] = []
-    
-    func sectionModel(at index: Int) -> HomeSectionModel? {
+    func sectionModel(at index: Int) -> Section? {
         return data[index]
     }
     
-    func model(at indexPath: IndexPath) -> HomeSectionItem? {
+    func model(at indexPath: IndexPath) -> Section.Item? {
         return data[indexPath.section].items[indexPath.row]
     }
     
@@ -26,8 +25,7 @@ final class HomeModelDataSource {
         return sectionModel.items.count
     }
     
-    func update(data: [HomeSectionModel]) {
+    func update(data: [Section]) {
         self.data = data
     }
-    
 }
