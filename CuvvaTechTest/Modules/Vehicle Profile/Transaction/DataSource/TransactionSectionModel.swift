@@ -19,7 +19,7 @@ struct TransactionDisplayItem: Equatable {
     let amount: Int
     
     var amountTitle: String {
-        return NumberFormatter.receiptCurrency.string(from: NSNumber(integerLiteral: amount / 100)) ?? ""
+        return NumberFormatter.receiptCurrency.string(from: NSNumber(value: Double(amount) / 100.0)) ?? ""
     }
 }
 
