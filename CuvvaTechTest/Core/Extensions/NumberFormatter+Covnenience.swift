@@ -15,4 +15,10 @@ extension NumberFormatter {
         formatter.currencySymbol = "£"
         return formatter
     }()
+    
+    static let ordinal: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .ordinal
+        return formatter
+    }()
 }

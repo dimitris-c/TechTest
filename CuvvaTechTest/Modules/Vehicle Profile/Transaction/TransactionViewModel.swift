@@ -80,8 +80,13 @@ final class TransactionViewModel: TransactionViewModelType {
                 let totalPayable = TransactionDisplayItem(title: "Total", amount: pricing.totalPayable)
                 items.append(.total(item: totalPayable))
             }
-            let transactionDate = "" // missing date, perhaps should be from the timestamp of the wrapper??
-            section.append(.transaction(title: transactionDate, items: items))
+             // is this correct? the timestamp of the wrapper??
+            if let transactionDate = transaction.date {
+                let formatted = ordinalDayWithMonthYear(from: transactionDate, showsTime: true)
+                section.append(.transaction(title: formatted, items: items))
+            } else {
+                section.append(.transaction(title: "", items: items))
+            }
         }
         
         dataSource.update(data: section)

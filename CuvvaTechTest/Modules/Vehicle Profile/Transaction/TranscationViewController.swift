@@ -39,7 +39,7 @@ class TransactionViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = DesignStyling.Colours.viewsBackground
         self.title = viewModel.navigationTitle
-    
+        
         self.setupUI()
         self.bindViewModel()
         viewModel.perform(action: .viewLoaded)
@@ -95,7 +95,7 @@ class TransactionViewController: UIViewController {
             guard let self = self else { return }
             switch effect {
                 case .loading:
-                break
+                    break
                 case .loaded(let isVoided):
                     self.voidedBanner.isHidden = !isVoided
                     self.tableView.reloadData()

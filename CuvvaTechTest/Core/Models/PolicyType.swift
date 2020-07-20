@@ -18,6 +18,10 @@ enum PolicyType: Codable, Equatable {
     }
     
     init(from decoder: Decoder) throws {
+        try self.init(from: decoder, timestamp: nil)
+    }
+    
+    init(from decoder: Decoder, timestamp: Date?) throws {
         let container = try decoder.container(keyedBy: PolicyWrapper.CodingKeys.self)
         let type = try container.decode(String.self, forKey: .type)
         if type == PolicyCodingKeys.created.rawValue {
@@ -26,6 +30,7 @@ enum PolicyType: Codable, Equatable {
         }
         else if type == PolicyCodingKeys.transaction.rawValue {
             let transaction = try container.decode(PolicyTransaction.self, forKey: .payload)
+            transaction.date = timestamp
             self = .transaction(transaction)
         }
         else if type == PolicyCodingKeys.cancelled.rawValue {

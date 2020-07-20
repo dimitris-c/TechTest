@@ -24,7 +24,7 @@ struct PolicyWrapper: Codable, Equatable {
         self.type = try container.decode(String.self, forKey: .type)
         self.timestamp = try container.decode(Date.self, forKey: .timestamp)
         self.uniqueKey = try container.decode(String.self, forKey: .uniqueKey)
-        self.payload = try PolicyType(from: decoder)
+        self.payload = try PolicyType(from: decoder, timestamp: timestamp)
     }
     
     func encode(to encoder: Encoder) throws {

@@ -31,7 +31,7 @@ struct PreviousPolicyDisplayModel: Equatable {
         }
         
         if let endDate = policy.endDate {
-            endDateTitle = DateFormatter.dayDateMonthYear.string(from: endDate)
+            endDateTitle = ordinalDayWithMonthYear(from: endDate, showsTime: false)
         } else {
             endDateTitle = "n/a"
         }
